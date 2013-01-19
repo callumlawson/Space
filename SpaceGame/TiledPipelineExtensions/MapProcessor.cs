@@ -23,7 +23,7 @@ namespace SpaceGameContentPipeline
         public int height;
         public Tile[] Tiles;
         public int tileSize = 32;
-       
+
     }
 
     [ContentSerializerRuntimeType("SpaceGame.Tile, SpaceGame")]
@@ -38,10 +38,12 @@ namespace SpaceGameContentPipeline
     [ContentSerializerRuntimeType("SpaceGame.WorldObject, SpaceGame")]
     public class WorldObject
     {
-
-        //public Vector2 position;
         //direction faces;
         //AnimatedTexture2D texture;
+        public Vector2 position;
+        public Dictionary<String, String> properties = new Dictionary<string, string>();
+        public String type;
+
         public Boolean blocks = false;
         public Boolean destroys = false;
 
@@ -118,19 +120,20 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-           // System.Diagnostics.Debugger.Launch();
+            // System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
             TiledHelpers.GenerateTileSourceRectangles(input);
 
-           
+
             Map map = new Map();
+            List<WorldObject> objects = new List<WorldObject>();
 
             foreach (LayerContent layer in input.Layers)
             {
                 TileLayerContent tileLayerContent = layer as TileLayerContent;
-                //MapObjectLayerContent mapObjectLayerContent = layer as MapObjectLayerContent;
+                MapObjectLayerContent objectLayerContent = layer as MapObjectLayerContent;
 
 
                 if (tileLayerContent != null)
@@ -176,9 +179,13 @@ namespace SpaceGameContentPipeline
 
                                     sourceRect = tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Source;
 
-                                    if (tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties.ContainsKey("walkCost"))
+                                    if (tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties.ContainsKey("walkCost")) //0 is impassible , 100 is normal, init to zero
                                     {
                                         walkCost = Convert.ToInt16(tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties["walkCost"]);
+                                    }
+                                    else
+                                    {
+                                        walkCost = 0;
                                     }
                                     // and break out of the foreach loop
                                     break;
@@ -205,11 +212,50 @@ namespace SpaceGameContentPipeline
                     map.tileSize = 64; //TODO get it
 
                 }
+
+                if (objectLayerContent != null)
+                {
+
+                    //Variables
+                    Dictionary<String, String> properties = null;
+                    Rectangle bounds = new Rectangle();
+                    String name = null;
+                    String type = null;
+
+                    // we need to build up our tile list now
+                    //outLayer.Objects = new HauntedHouseMapObjectContent[mapObjectLayerContent.Objects.Count];
+                    MapObjectContent[] mapLayerObjects = objectLayerContent.Objects.ToArray();
+
+
+                    for (int i = 0; i < mapLayerObjects.Length; i++)
+                    {
+                        if (mapLayerObjects[i].Properties != null)
+                        {
+                            properties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
+                        }
+
+                        bounds = mapLayerObjects[i].Bounds;
+                        name = mapLayerObjects[i].Name;
+                        type = mapLayerObjects[i].Type;
+
+                        float x = (float)mapLayerObjects[i].Bounds.X;
+                        float y = mapLayerObjects[i].Bounds.Y;
+
+                        // now insert the tile into our output
+                        objects.Add(new WorldObject
+                        {
+                            properties = properties,
+                            type = type,
+                            position = new Vector2(x, y)
+                        });
+                    }
+                }
             }
 
-            Room output = new Room { 
-            map = map,
-            objects = new List<WorldObject>()
+            Room output = new Room
+            {
+                map = map,
+                objects = objects
             };
 
             return output;
