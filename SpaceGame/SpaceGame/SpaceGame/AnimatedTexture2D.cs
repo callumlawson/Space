@@ -18,13 +18,7 @@ namespace SpaceGame
 
         public AnimatedTexture2D()
         {
-
-        }
-        public void Setup(Texture2D spriteSheet, int width)
-        {
-            this.width = width;
-            this.frames = spriteSheet.Width / width;
-            this.sheet = spriteSheet;
+            this.frames = sheet.Width / width;
         }
         public void Update(GameTime gameTime)
         {

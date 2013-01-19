@@ -15,14 +15,20 @@ namespace SpaceGame
         {
 
         }
-        public void Setup(Map map,List<WorldObject> objects)
-        {
-            this.map = map;
-            this.objects = objects;
-        }
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
-
+            map.Render(spriteBatch, offset, tint);
+            foreach (WorldObject wo in objects)
+            {
+                wo.Render(spriteBatch, offset, tint);
+            }
+        }
+        public void Update(GameTime gameTime)
+        {
+            foreach (WorldObject wo in objects)
+            {
+                wo.Update(gameTime);
+            }
         }
     }
 }

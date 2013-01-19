@@ -17,17 +17,28 @@ namespace SpaceGame
     class WorldObject:IRenders,IUpdates
     {
         protected Vector2 position;
-        protected direction faces;
         protected AnimatedTexture2D texture;
+        protected Collider collider;
+        protected direction faces;
         public WorldObject()
         {
             
         }
-        public void Setup(Vector2 position,direction faces,AnimatedTexture2D texture)
+        public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
-            this.position = position;
-            this.faces = faces;
-            this.texture = texture;
+            texture.Render(spriteBatch, position + offset, tint);
+        }
+        public void Update(GameTime gameTime)
+        {
+            texture.Update(gameTime);
+        }
+        public Boolean hits(WorldObject wo)
+        {
+            
+        }
+        public Boolean hits(Map map)
+        {
+            
         }
     }
 }

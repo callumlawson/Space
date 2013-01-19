@@ -25,10 +25,9 @@ namespace SpaceGame
         {
 
         }
-        public void Setup(entryPoint mainEntry)
+        public void Update(GameTime gameTime)
         {
-            this.mainEntry = mainEntry;
+
         }
-        public void Render(
     }
 }

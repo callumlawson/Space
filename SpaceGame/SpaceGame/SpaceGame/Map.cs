@@ -11,17 +11,10 @@ namespace SpaceGame
         protected int width;
         protected int height;
         protected Tile[,] tiles;
-        protected float tileSize;
+        protected int tileSize;
         public Map()
         {
             
-        }
-        public void Setup(int width, int height, Tile[,] tiles,int tileSize)
-        {
-            this.width = width;
-            this.height = height;
-            this.tiles = tiles;
-            this.tileSize = (float)tileSize;
         }
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
