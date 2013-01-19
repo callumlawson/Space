@@ -21,26 +21,39 @@ namespace SpaceGame
         protected Collider collider;
         protected direction faces;
 
+        public Boolean blocks;
+        public Boolean destroys;
+
+        public Boolean hitBlocks;
+        public Boolean hitdestroys;
+
+        public virtual Vector2 hitPosition
+        {
+            get
+            {
+                return position;
+            }
+        }
         public WorldObject()
         {
             
         }
-
-        public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
+        public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             texture.Render(spriteBatch, position + offset, tint);
         }
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             texture.Update(gameTime);
         }
-        public Boolean hits(WorldObject wo)
+        public virtual Boolean hits(WorldObject wo)
         {
-            return collider.hit(wo.collider, position, wo.position);
+            return collider.hit(wo.collider, hitPosition, wo.hitPosition);
         }
-        public Boolean hits(Map map)
+        public virtual Boolean hits(Map map)
         {
-            return collider.hit(map,position);
+            return collider.hit(map,hitPosition);
         }
+
     }
 }
