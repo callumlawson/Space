@@ -44,6 +44,7 @@
       <Name>testmap</Name>
       <Importer>TmxImporter</Importer>
       <Processor>MapProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
