@@ -8,6 +8,6 @@ namespace SpaceGame
 {
     public interface IRenders
     {
-        void render(SpriteBatch spriteBatch,Vector2 offset,Color tint);
+        void Render(SpriteBatch spriteBatch,Vector2 offset,Color tint);
     }
 }

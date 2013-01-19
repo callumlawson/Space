@@ -34,11 +34,11 @@ namespace SpaceGame
         }
         public Boolean hits(WorldObject wo)
         {
-            
+            return collider.hit(wo.collider, position, wo.position);
         }
         public Boolean hits(Map map)
         {
-            
+            return collider.hit(map,position);
         }
     }
 }
