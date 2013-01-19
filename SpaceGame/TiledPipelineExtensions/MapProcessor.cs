@@ -118,8 +118,8 @@ namespace HauntedHouseContentPipeline
             //TiledHelpers.BuildTileSetTextures(input, context);
 
             //Temporary variables:
-            int mapWidth;
-            int mapHeight;
+            //int mapWidth;
+            //int mapHeight;
 
             // generate source rectangles
             TiledHelpers.GenerateTileSourceRectangles(input);
