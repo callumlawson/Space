@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 namespace SpaceGame
 {
-    class Map:IRenders
+    public class Map:IRenders
     {
         protected int width;
         protected int height;

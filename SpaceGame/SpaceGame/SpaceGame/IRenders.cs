@@ -6,8 +6,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 namespace SpaceGame
 {
-    interface IRenders
+    public interface IRenders
     {
-        public void render(SpriteBatch spriteBatch,Vector2 offset,Color tint);
+        void render(SpriteBatch spriteBatch,Vector2 offset,Color tint);
     }
 }

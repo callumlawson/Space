@@ -18,7 +18,7 @@ namespace SpaceGame
         }
 
     }
-    class Ship:IUpdates
+    public class Ship:IUpdates
     {
         protected entryPoint mainEntry;
         public Ship()

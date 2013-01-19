@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
-    class CircleCollider:Collider
+    public class CircleCollider:Collider
     {
         protected float radius;
         public CircleCollider()

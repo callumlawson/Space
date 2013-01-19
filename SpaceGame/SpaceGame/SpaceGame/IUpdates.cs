@@ -5,8 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace SpaceGame
 {
-    interface IUpdates
+    public interface IUpdates
     {
-        public void Update(GameTime gameTime);
+        void Update(GameTime gameTime);
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace SpaceGame
 {
-    class Collider
+    public class Collider
     {
         protected Vector2 position;
         public Collider()

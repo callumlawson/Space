@@ -14,7 +14,7 @@ namespace SpaceGame
         right
     };
 
-    class WorldObject:IRenders,IUpdates
+    public class WorldObject:IRenders,IUpdates
     {
         protected Vector2 position;
         protected AnimatedTexture2D texture;

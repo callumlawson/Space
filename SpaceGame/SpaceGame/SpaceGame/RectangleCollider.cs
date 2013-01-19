@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
-    class RectangleCollider:Collider
+    public class RectangleCollider:Collider
     {
         protected Vector2 dimentions;
         public RectangleCollider()

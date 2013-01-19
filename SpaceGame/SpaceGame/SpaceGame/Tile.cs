@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceGame
 {
-    class Tile:IRenders
+    public class Tile:IRenders
     {
         protected int walkCost;
         protected Texture2D tex;

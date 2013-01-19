@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace SpaceGame
 {
-    class AnimatedTexture2D:IRenders,IUpdates
+    public class AnimatedTexture2D:IRenders,IUpdates
     {
         protected Texture2D sheet;
         protected int width;

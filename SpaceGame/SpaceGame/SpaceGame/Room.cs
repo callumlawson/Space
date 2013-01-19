@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace SpaceGame
 {
-    class Room:IRenders,IUpdates
+    public class Room:IRenders,IUpdates
     {
         protected Map map;
         protected List<WorldObject> objects;

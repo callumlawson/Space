@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
-    class LineCollider:Collider
+    public class LineCollider:Collider
     {
         protected float secondPosition;
         public LineCollider()
@@ -19,7 +19,9 @@ namespace SpaceGame
         }
         public override bool hit(LineCollider c, Vector2 p1, Vector2 p2)
         {
+            //d1 = position - c.position;
             return true;
+
         }
         public override bool hit(CircleCollider c, Vector2 p1, Vector2 p2)
         {
