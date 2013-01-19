@@ -9,6 +9,28 @@ using System;
 
 namespace HauntedHouseContentPipeline
 {
+    [ContentSerializerRuntimeType("SpaceGame.Tile, SpaceGame")]
+    public class SpaceGameTileContent    
+    {
+        private int walkCost;
+        private Texture2D tex;
+    }
+
+    [ContentSerializerRuntimeType("SpaceGame.Map, SpaceGame")]
+    public class SpaceGameMapContent
+    {
+        public int width;
+        public int height;
+        public Tile[,] tiles;
+    }
+
+    [ContentSerializerRuntimeType("SpaceGame.Room, SpaceGame")]
+    public class SpaceGameRoomContent
+    {
+       
+    }
+
+    /*
     // Each tile has a texture, source rect, and sprite effects.
     [ContentSerializerRuntimeType("HauntedHouse.Tile, HauntedHouse")]
     public class HauntedHouseMapTileContent
@@ -60,23 +82,28 @@ namespace HauntedHouseContentPipeline
         public List<HauntedHouseObjectLayerContent> ObjectLayers = new List<HauntedHouseObjectLayerContent>();
         public List<HauntedHouseTileLayerContent> TileLayers = new List<HauntedHouseTileLayerContent>();
     }
-
+    */
+    /*
     [ContentProcessor(DisplayName = "TMX Processor - HauntedHouse")]
-    public class MapProcessor : ContentProcessor<MapContent, HauntedHouseMapContent>
+    public class MapProcessor : ContentProcessor<MapContent, SpaceGameMapContent>
     {
-        public override HauntedHouseMapContent Process(MapContent input, ContentProcessorContext context)
+        public override SpaceGameMapContent Process(MapContent input, ContentProcessorContext context)
         {
             // build the textures
             //TiledHelpers.BuildTileSetTextures(input, context);
+
+            //Temporary variables:
+            int mapWidth;
+            int mapHeight;
 
             // generate source rectangles
             TiledHelpers.GenerateTileSourceRectangles(input);
 
             // now build our output, first by just copying over some data
-            HauntedHouseMapContent output = new HauntedHouseMapContent
+            SpaceGameMapContent output = new SpaceGameMapContent
             {
-                TileWidth = input.TileWidth,
-                TileHeight = input.TileHeight,
+                width = input.TileWidth,
+                height = input.TileHeight,
             };
 
             // iterate all the layers of the input
@@ -89,13 +116,13 @@ namespace HauntedHouseContentPipeline
 
                 if (tileLayerContent != null)
                 {
-                    // create the new layer
-                    HauntedHouseTileLayerContent outLayer = new HauntedHouseTileLayerContent
-                    {
-                        Width = tileLayerContent.Width,
-                        Height = tileLayerContent.Height,
-                        LayerName = tileLayerContent.Name,
-                    };
+                   // create the new layer
+                   // HauntedHouseTileLayerContent outLayer = new HauntedHouseTileLayerContent
+                   // {
+                   //     Width = tileLayerContent.Width,
+                   //     Height = tileLayerContent.Height,
+                   //     LayerName = tileLayerContent.Name,
+                   // };
 
                     // we need to build up our tile list now
                     outLayer.Tiles = new HauntedHouseMapTileContent[tileLayerContent.Data.Length];
@@ -211,4 +238,5 @@ namespace HauntedHouseContentPipeline
             return output;
         }
     }
+     */
 }
