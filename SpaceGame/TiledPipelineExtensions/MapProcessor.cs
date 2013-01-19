@@ -43,6 +43,7 @@ namespace SpaceGameContentPipeline
         public Vector2 position;
         public Dictionary<String, String> properties = new Dictionary<string, string>();
         public String type;
+        public float angle = 0f;
 
         public Boolean blocks = false;
         public Boolean destroys = false;

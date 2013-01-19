@@ -60,15 +60,21 @@ namespace SpaceGame
             {
                 skip = 0;
                 frame++;
-                if (frame >= subStop)
+                if (frame > subStop)
                 {
                     frame = subStart;
                 }
             }
         }
+
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             spriteBatch.Draw(sheet, offset, new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint);
+        }
+
+        public void Render(SpriteBatch spriteBatch, Vector2 offset, float angle, Color tint)
+        {
+            spriteBatch.Draw(sheet, new Rectangle((int)offset.X, (int)offset.Y, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle + MathHelper.PiOver2), new Vector2(width / 2, sheet.Height / 2), SpriteEffects.None, 0f);
         }
     }
 }

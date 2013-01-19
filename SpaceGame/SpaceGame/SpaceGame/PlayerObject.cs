@@ -19,6 +19,8 @@ namespace SpaceGame
         {
             Console.WriteLine(this.hitBlocks);
 
+            
+
             KeyboardState ks = Keyboard.GetState();
             if (ks.IsKeyDown(Keys.W) || ks.IsKeyDown(Keys.Up))
             {
@@ -36,8 +38,12 @@ namespace SpaceGame
             {
                 this.velocity.X += 1;
             }
+
+            this.angle =  (float)Math.Atan2(this.velocity.Y, this.velocity.X);
+
             base.Update(gameTime);
         }
+
         public override void Init(ContentManager content)
         {
             base.Init(content);

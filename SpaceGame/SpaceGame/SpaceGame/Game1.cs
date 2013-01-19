@@ -25,7 +25,8 @@ namespace SpaceGame
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            
+            graphics.PreferredBackBufferHeight = 768;
+            graphics.PreferredBackBufferWidth = 1024;
 
             //Console.WriteLine(testRoom.Map.Width);
         }
@@ -91,7 +92,7 @@ namespace SpaceGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(new Color(105,105,105));
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();

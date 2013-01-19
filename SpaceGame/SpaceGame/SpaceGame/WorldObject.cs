@@ -27,6 +27,8 @@ namespace SpaceGame
         public Boolean hitBlocks;
         public Boolean hitdestroys;
 
+        public float angle;
+
         public virtual Vector2 hitPosition
         {
             get
@@ -44,7 +46,7 @@ namespace SpaceGame
         }
         public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
-            texture.Render(spriteBatch, position + offset, tint);
+            texture.Render(spriteBatch, position + offset, angle, tint);
         }
         public virtual void Update(GameTime gameTime)
         {
