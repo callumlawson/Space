@@ -13,6 +13,11 @@ namespace SpaceGame
         {
 
         }
+        public CircleCollider(Vector2 position, float rad)
+        {
+            this.position = position;
+            this.radius = rad;
+        }
         public override bool hit(RectangleCollider c, Vector2 p1, Vector2 p2)
         {
             return c.hit(this, p1, p2);

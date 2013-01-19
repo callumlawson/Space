@@ -21,12 +21,17 @@ namespace SpaceGame
 
         public MovingWorldObject()
         {
-
+            this.position = new Vector2(50, 50);
+            this.friction = 0.9f;
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
+            if (!this.hitBlocks)
+            {
+                this.position += this.velocity;
+            }
+            velocity *= friction;
             base.Update(gameTime);
-            
         }
     }
 }

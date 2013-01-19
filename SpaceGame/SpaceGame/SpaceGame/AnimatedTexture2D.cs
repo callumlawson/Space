@@ -6,6 +6,18 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace SpaceGame
 {
+    public struct animationSub
+    {
+        public string id;
+        public int startFrame;
+        public int stopFrame;
+        public animationSub(string id, int start, int stop)
+        {
+            this.id = id;
+            this.startFrame = start;
+            this.stopFrame = stop;
+        }
+    }
     public class AnimatedTexture2D:IRenders,IUpdates
     {
         protected Texture2D sheet;
@@ -16,9 +28,30 @@ namespace SpaceGame
         protected int skip = 0;
         protected int skipC = 0;
 
-        public AnimatedTexture2D()
+        protected int subStart;
+        protected int subStop;
+
+        protected List<animationSub> subs;
+
+        public AnimatedTexture2D(Texture2D sheet,int width,List<animationSub> subs)
         {
+            this.sheet = sheet;
+            this.width = width;
+            this.subs = subs;
             this.frames = sheet.Width / width;
+            subStart = 0;
+            subStop = frames;
+        }
+        public void setAnim(string id)
+        {
+            foreach (animationSub sub in subs)
+            {
+                if (sub.id == id)
+                {
+                    subStart = sub.startFrame;
+                    subStop = sub.stopFrame;
+                }
+            }
         }
         public void Update(GameTime gameTime)
         {
@@ -27,9 +60,9 @@ namespace SpaceGame
             {
                 skip = 0;
                 frame++;
-                if (frame == frames)
+                if (frame >= subStop)
                 {
-                    frame = 0;
+                    frame = subStart;
                 }
             }
         }

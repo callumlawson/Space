@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 namespace SpaceGame
 {
     public enum direction
@@ -14,12 +15,11 @@ namespace SpaceGame
         right
     };
 
-    public class WorldObject:IRenders,IUpdates
+    public class WorldObject:IRenders,IUpdates,IInitable
     {
-        protected Vector2 position;
+        public Vector2 position;
         protected AnimatedTexture2D texture;
         protected Collider collider;
-        protected direction faces;
 
         public Boolean blocks;
         public Boolean destroys;
@@ -38,6 +38,10 @@ namespace SpaceGame
         {
             
         }
+        public virtual void Init(ContentManager content)
+        {
+            //Must set/have by this point a: collider, animTexture.
+        }
         public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             texture.Render(spriteBatch, position + offset, tint);
@@ -54,6 +58,5 @@ namespace SpaceGame
         {
             return collider.hit(map,hitPosition);
         }
-
     }
 }
