@@ -51,7 +51,7 @@ namespace SpaceGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            testRoom = Content.Load<Room>("Levels/testmap");
+            testRoom = Content.Load<Room>("Levels/room1");
             WorldObject wo = new PlayerObject();
             wo.Init(Content);
             testRoom.objects.Add(wo);
@@ -77,7 +77,9 @@ namespace SpaceGame
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            
+
+            testRoom.Update(gameTime);
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);

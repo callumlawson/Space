@@ -26,7 +26,7 @@ namespace SpaceGame
         protected int frames;
 
         protected int skip = 0;
-        protected int skipC = 0;
+        public int skipC = 0;
 
         protected int subStart;
         protected int subStop;

@@ -17,6 +17,8 @@ namespace SpaceGame
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
+            Console.WriteLine(this.hitBlocks);
+
             KeyboardState ks = Keyboard.GetState();
             if (ks.IsKeyDown(Keys.W) || ks.IsKeyDown(Keys.Up))
             {
@@ -44,6 +46,10 @@ namespace SpaceGame
             subs.Add(new animationSub("walking",1,2));
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("player"),64,subs);
             this.collider = new CircleCollider(new Vector2(32, 32), 30);
+            this.texture.skipC = 5;
+            this.texture.setAnim("walking");
+
+
         }
     }
 }
