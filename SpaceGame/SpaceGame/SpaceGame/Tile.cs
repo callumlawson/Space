@@ -11,6 +11,7 @@ namespace SpaceGame
     {
         public int walkCost;
         public Texture2D tex;
+        public Rectangle sourceRect;
 
         public Tile()
         {
@@ -19,7 +20,7 @@ namespace SpaceGame
 
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
-            spriteBatch.Draw(tex, offset, tint);
+            spriteBatch.Draw(tex, offset, sourceRect, tint);
         }
     }
 }

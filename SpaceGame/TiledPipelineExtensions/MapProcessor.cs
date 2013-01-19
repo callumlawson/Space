@@ -22,7 +22,8 @@ namespace SpaceGameContentPipeline
         public int width;
         public int height;
         public Tile[] Tiles;
-        //public Tile[,] tiles;
+        public int tileSize = 32;
+       
     }
 
     [ContentSerializerRuntimeType("SpaceGame.Tile, SpaceGame")]
@@ -31,6 +32,7 @@ namespace SpaceGameContentPipeline
         public int walkCost;
         //public ExternalReference<Texture2DContent> tex;
         public ExternalReference<Texture2DContent> tex;
+        public Rectangle sourceRect;
     }
 
     [ContentSerializerRuntimeType("SpaceGame.WorldObject, SpaceGame")]
@@ -111,7 +113,7 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-            System.Diagnostics.Debugger.Launch();
+           // System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
@@ -142,9 +144,7 @@ namespace SpaceGameContentPipeline
 
                         // use that to get the actual index as well as the SpriteEffects
                         int tileIndex;
-
                         SpriteEffects spriteEffects;
-
                         TiledHelpers.DecodeTileID(tileID, out tileIndex, out spriteEffects);
 
                         // figure out which tile set has this tile index in it and grab
@@ -189,21 +189,22 @@ namespace SpaceGameContentPipeline
                         tiles[i] = new Tile
                         {
                             walkCost = walkCost,
-                            tex = textureContent
+                            tex = textureContent,
+                            sourceRect = sourceRect
                             //GridSize = new Vector2(output.TileWidth, output.TileHeight),
                             //Position = new Vector2((float)i % tileLayerContent.Width * output.TileWidth, (float)((Math.Floor((double)i / tileLayerContent.Width) * output.TileHeight)))
                         };
                     }
 
                     map.Tiles = tiles;
-
+                    map.tileSize = 64; //TODO get it
 
                 }
             }
 
             Room output = new Room { 
             map = map,
-            objects =null
+            objects = new List<WorldObject>()
             };
 
             return output;

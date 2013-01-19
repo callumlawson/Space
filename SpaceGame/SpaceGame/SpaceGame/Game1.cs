@@ -25,8 +25,8 @@ namespace SpaceGame
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            testRoom = Content.Load<Room>("Levels/testmap");
-            int a = 4;
+            
+
             //Console.WriteLine(testRoom.Map.Width);
         }
 
@@ -39,7 +39,7 @@ namespace SpaceGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+           
             base.Initialize();
         }
 
@@ -51,7 +51,7 @@ namespace SpaceGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            testRoom = Content.Load<Room>("Levels/testmap");
             // TODO: use this.Content to load your game content here
         }
 
