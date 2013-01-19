@@ -42,6 +42,11 @@ namespace SpaceGameContentPipeline
         //public Vector2 position;
         //direction faces;
         //AnimatedTexture2D texture;
+        public Boolean blocks = false;
+        public Boolean destroys = false;
+
+        public Boolean hitBlocks = false;
+        public Boolean hitdestroys = false;
     }
 
     /*
