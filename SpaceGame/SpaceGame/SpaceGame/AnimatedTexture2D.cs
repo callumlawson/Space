@@ -26,5 +26,22 @@ namespace SpaceGame
             this.frames = spriteSheet.Width / width;
             this.sheet = spriteSheet;
         }
+        public void Update(GameTime gameTime)
+        {
+            skip++;
+            if (skip >= skipC)
+            {
+                skip = 0;
+                frame++;
+                if (frame == frames)
+                {
+                    frame = 0;
+                }
+            }
+        }
+        public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
+        {
+            spriteBatch.Draw(sheet, offset, new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint);
+        }
     }
 }

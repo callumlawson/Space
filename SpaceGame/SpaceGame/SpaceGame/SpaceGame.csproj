@@ -72,6 +72,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimatedTexture2D.cs" />
     <Compile Include="IRenders.cs" />
     <Compile Include="IUpdates.cs" />
     <Compile Include="Map.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Room.cs" />
+    <Compile Include="Ship.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="WorldObject.cs" />
   </ItemGroup>
