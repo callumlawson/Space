@@ -13,6 +13,7 @@ namespace SpaceGame
         left,
         right
     };
+
     class WorldObject:IRenders,IUpdates
     {
         protected Vector2 position;
