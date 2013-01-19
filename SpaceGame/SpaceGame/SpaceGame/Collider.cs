@@ -7,10 +7,10 @@ namespace SpaceGame
 {
     public abstract class Collider
     {
-        protected Vector2 position;
+        public Vector2 position;
         public Collider()
         {
-
+           
         }
         public bool hit(Collider c, Vector2 p1, Vector2 p2)
         {
@@ -28,7 +28,24 @@ namespace SpaceGame
             }
             return false;
         }
-        public abstract Boolean hit(CircleCollider c, Vector2 p1,Vector2 p2);
+        public List<RectangleCollider> fromMap(Vector2 topLeft, Vector2 dimentions,Map map)
+        {
+            Vector2 ss = new Vector2(map.tileSize, map.tileSize);
+            List<RectangleCollider> output = new List<RectangleCollider>();
+            for (int i = ((int)topLeft.X) % map.tileSize; i <= ((int)(topLeft.X + dimentions.X) + 1) % map.tileSize; i++)
+            {
+                for (int j = ((int)topLeft.Y) % map.tileSize; j <= ((int)(topLeft.Y + dimentions.Y) + 1) % map.tileSize; j++)
+                {
+                    if (map.tiles[i + (j * map.width)].walkCost != 0)
+                    {
+                        Vector2 position = new Vector2(i * map.tileSize, j * map.tileSize);
+                        output.Add(new RectangleCollider(position, ss));
+                    }
+                }
+            }
+            return output;
+        }
+        public abstract Boolean hit(CircleCollider c, Vector2 p1, Vector2 p2);
         public abstract Boolean hit(RectangleCollider c, Vector2 p1,Vector2 p2);
         public abstract Boolean hit(LineCollider c, Vector2 p1, Vector2 p2);
         public abstract Boolean hit(Map map, Vector2 p);

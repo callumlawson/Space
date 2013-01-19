@@ -1,0 +1,2 @@
+Content\Levels\testmap.xnb
+Content\TileSets\tileset.xnb

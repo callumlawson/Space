@@ -8,13 +8,14 @@ namespace SpaceGame
 {
     public class Room:IRenders,IUpdates
     {
-        protected Map map;
-        protected List<WorldObject> objects;
+        public Map map;
+        public List<WorldObject> objects;
 
         public Room()
         {
 
         }
+
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             map.Render(spriteBatch, offset, tint);

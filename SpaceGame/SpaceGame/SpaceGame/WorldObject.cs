@@ -20,10 +20,12 @@ namespace SpaceGame
         protected AnimatedTexture2D texture;
         protected Collider collider;
         protected direction faces;
+
         public WorldObject()
         {
             
         }
+
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             texture.Render(spriteBatch, position + offset, tint);

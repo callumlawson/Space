@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiledLib", "SpaceGame\Tiled
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiledPipelineExtensions", "TiledPipelineExtensions\TiledPipelineExtensions.csproj", "{8A0232DF-B771-4E46-A977-170C38C72C01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugPipeline", "..\..\Projects\HauntedHouse\DebugPipeline1\DebugPipeline.csproj", "{920945F9-046D-46B4-9D3C-6E8C077303A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -29,6 +31,10 @@ Global
 		{8A0232DF-B771-4E46-A977-170C38C72C01}.Debug|x86.Build.0 = Debug|x86
 		{8A0232DF-B771-4E46-A977-170C38C72C01}.Release|x86.ActiveCfg = Debug|x86
 		{8A0232DF-B771-4E46-A977-170C38C72C01}.Release|x86.Build.0 = Debug|x86
+		{920945F9-046D-46B4-9D3C-6E8C077303A2}.Debug|x86.ActiveCfg = Debug|x86
+		{920945F9-046D-46B4-9D3C-6E8C077303A2}.Debug|x86.Build.0 = Debug|x86
+		{920945F9-046D-46B4-9D3C-6E8C077303A2}.Release|x86.ActiveCfg = Release|x86
+		{920945F9-046D-46B4-9D3C-6E8C077303A2}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

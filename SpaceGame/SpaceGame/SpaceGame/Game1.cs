@@ -18,11 +18,16 @@ namespace SpaceGame
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Room testRoom;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            testRoom = Content.Load<Room>("Levels/testmap");
+            int a = 4;
+            //Console.WriteLine(testRoom.Map.Width);
         }
 
         /// <summary>
@@ -84,6 +89,11 @@ namespace SpaceGame
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            testRoom.Render(spriteBatch, new Vector2(), Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

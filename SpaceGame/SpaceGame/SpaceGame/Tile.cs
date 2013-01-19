@@ -9,11 +9,12 @@ namespace SpaceGame
 {
     public class Tile:IRenders
     {
-        protected int walkCost;
-        protected Texture2D tex;
+        public int walkCost;
+        public Texture2D tex;
 
-        public Tile(Texture2D tex,int walkCost)
+        public Tile()
         {
+
         }
 
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)

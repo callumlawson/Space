@@ -8,10 +8,11 @@ namespace SpaceGame
 {
     public class Map:IRenders
     {
-        protected int width;
-        protected int height;
-        protected Tile[,] tiles;
-        protected int tileSize;
+        public int width;
+        public int height;
+        public Tile[] tiles;
+        public int tileSize;
+
         public Map()
         {
             
@@ -22,7 +23,7 @@ namespace SpaceGame
             {
                 for (int j = 0; j < height; j++)
                 {
-                    tiles[i, j].Render(spriteBatch, new Vector2(offset.X + (tileSize * i), offset.Y + (tileSize * j)), tint);
+                    tiles[i + (j*width)].Render(spriteBatch, new Vector2(offset.X + (tileSize * i), offset.Y + (tileSize * j)), tint);
                 }
             }
         }
