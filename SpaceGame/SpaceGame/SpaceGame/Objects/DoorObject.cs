@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace SpaceGame
 {
-    class DoorObject:WorldObject 
+    public class DoorObject:WorldObject 
     {
         public Room room;
 

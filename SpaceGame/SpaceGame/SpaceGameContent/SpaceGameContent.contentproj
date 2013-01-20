@@ -136,17 +136,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Levels\room2.tmx">
-      <Name>room2</Name>
-      <Importer>TmxImporter</Importer>
-      <Processor>MapProcessor</Processor>
-      <SubType>Designer</SubType>
-    </Compile>
-    <Compile Include="Levels\room4.tmx">
-      <Name>room4</Name>
-      <Importer>TmxImporter</Importer>
-      <Processor>MapProcessor</Processor>
-    </Compile>
     <Compile Include="Levels\room6.tmx">
       <Name>room6</Name>
       <Importer>TmxImporter</Importer>
@@ -183,6 +172,41 @@
   <ItemGroup>
     <Compile Include="Levels\turrettest.tmx">
       <Name>turrettest</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExplosionParticle1.png">
+      <Name>ExplosionParticle1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ExplosionParticle2.png">
+      <Name>ExplosionParticle2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="ExplosionParticle3.png">
+      <Name>ExplosionParticle3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="proximitymine.png">
+      <Name>proximitymine</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Levels\L1.tmx">
+      <Name>L1</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+      <SubType>Designer</SubType>
+    </Compile>
+    <Compile Include="Levels\LD1.tmx">
+      <Name>LD1</Name>
       <Importer>TmxImporter</Importer>
       <Processor>MapProcessor</Processor>
     </Compile>

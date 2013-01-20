@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceGame
 {
-    class DeathZoneObject: WorldObject
+    public class DeathZoneObject: WorldObject
     {
         public DeathZoneObject()
         {

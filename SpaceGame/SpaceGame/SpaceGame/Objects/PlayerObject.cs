@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 namespace SpaceGame
 {
-    class PlayerObject:MovingWorldObject
+    public class PlayerObject:MovingWorldObject
     {
         public string transition = "none";
 
@@ -95,6 +95,8 @@ namespace SpaceGame
         public override void Init(ContentManager content)
         {
             base.Init(content);
+            this.triggers = true;
+
             List<animationSub> subs = new List<animationSub>();
 
             subs.Add(new animationSub("stationary",0,0));

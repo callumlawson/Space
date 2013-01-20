@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SpaceGame
 {
-    class TriggerObject:MovingWorldObject
+    public class TriggerObject:MovingWorldObject
     {
         public TriggerObject()
         {

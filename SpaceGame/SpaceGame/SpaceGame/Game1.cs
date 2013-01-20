@@ -56,7 +56,7 @@ namespace SpaceGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             List<Room> rooms = new List<Room>();
-            rooms.Add(Content.Load<Room>("Levels/room7"));
+            rooms.Add(Content.Load<Room>("Levels/l1"));
             rooms.Add(Content.Load<Room>("Levels/doortest2"));
             rooms.Add(Content.Load<Room>("Levels/doortest3"));
             rooms.Add(Content.Load<Room>("Levels/doortest4"));
@@ -113,14 +113,30 @@ namespace SpaceGame
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        private int redLevel;
+        private int dir = -1;
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(new Color(105, 105, 105));
 
             // TODO: Add your drawing code here
+            Color toUse = new Color(255, 255, 255);
+            if (currentShip.alarm)
+            {
+                redLevel += dir;
+                if (redLevel == 255)
+                {
+                    dir = -1;
+                }
+                if (redLevel == 100)
+                {
+                    dir = 1;
+                }
+                toUse = new Color(255, redLevel, redLevel);
+            }
             spriteBatch.Begin();
 
-            currentShip.Render(spriteBatch, new Vector2(), Color.White);
+            currentShip.Render(spriteBatch, new Vector2(), toUse);
 
             spriteBatch.End();
 

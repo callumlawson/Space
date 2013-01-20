@@ -80,69 +80,26 @@ namespace SpaceGameContentPipeline
     {
 
     }
-
-    /*
-    [ContentSerializerRuntimeType("SpaceGame.AnimatedTexture2D, SpaceGame")]
-    public class AnimatedTexture2D
+    [ContentSerializerRuntimeType("SpaceGame.MovingWorldObject, SpaceGame")]
+    public class MovingWorldObject : WorldObject
     {
-        Texture2D spriteSheet;
-        int width;
-    }
-     */
 
-    /*
-    // Each tile has a texture, source rect, and sprite effects.
-    [ContentSerializerRuntimeType("HauntedHouse.Tile, HauntedHouse")]
-    public class HauntedHouseMapTileContent
-    {
-        public String TileSource;
-        //public ExternalReference<Texture2DContent> Texture;
-        public Rectangle SourceRectangle;
-        public SpriteEffects SpriteEffects;
-        public bool IsShadowCaster;
-        public bool Exists;
-        public Vector2 Position;
-        public Vector2 GridSize;
     }
+    [ContentSerializerRuntimeType("SpaceGame.TriggerObject, SpaceGame")]
+    public class TriggerObject : MovingWorldObject
+    {
 
-    [ContentSerializerRuntimeType("HauntedHouse.Entity, HauntedHouse")]
-    public class HauntedHouseMapObjectContent
-    {
-        public String EntityType;
-        public String EntityName;
-        public Rectangle EntityBounds;
-        public Dictionary<String, String> Properties;
     }
+    [ContentSerializerRuntimeType("SpaceGame.ProximityMine, SpaceGame")]
+    public class ProximityMine : TriggerObject 
+    {
 
-    // For each layer, we store the size of the layer and the tiles.
-    [ContentSerializerRuntimeType("HauntedHouse.TileLayer, HauntedHouse")]
-    public class HauntedHouseTileLayerContent
-    {
-        public String LayerName;
-        public int Width;
-        public int Height;
-        public HauntedHouseMapTileContent[] Tiles;
     }
+    [ContentSerializerRuntimeType("SpaceGame.Ambient, SpaceGame")]
+    public class Ambient : TriggerObject
+    {
 
-    [ContentSerializerRuntimeType("HauntedHouse.EntityLayer, HauntedHouse")]
-    public class HauntedHouseObjectLayerContent
-    {
-        public String LayerName;
-        public int Width;
-        public int Height;
-        public HauntedHouseMapObjectContent[] Objects;
     }
-
-    // For the map itself, we just store the size, tile size, and a list of layers.
-    [ContentSerializerRuntimeType("HauntedHouse.Level, HauntedHouse")]
-    public class HauntedHouseMapContent
-    {
-        public int TileWidth;
-        public int TileHeight;
-        public List<HauntedHouseObjectLayerContent> ObjectLayers = new List<HauntedHouseObjectLayerContent>();
-        public List<HauntedHouseTileLayerContent> TileLayers = new List<HauntedHouseTileLayerContent>();
-    }
-    */
 
     [ContentProcessor(DisplayName = "TMX Processor - SpaceGame")]
     public class MapProcessor : ContentProcessor<MapContent, Room>
@@ -150,7 +107,7 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-            // System.Diagnostics.Debugger.Launch();
+            System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
@@ -266,18 +223,8 @@ namespace SpaceGameContentPipeline
                         float x = (float)mapLayerObjects[i].Bounds.X;
                         float y = (float)mapLayerObjects[i].Bounds.Y;
 
-                        if (type == "DeathZone")
-                        {
-                            // now insert the tile into our output
-                            objects.Add(new DeathZoneObject
-                            {
-                                props = properties,
-                                objectName = name,
-                                type = type,
-                                position = new Vector2(x, y)
-                            });
-                        }
-                        else if (type == "HeatRay")
+                        if (type == "HeatRay") 
+
                         {
                             // now insert the tile into our output
                             objects.Add(new HeatRayObject
@@ -311,6 +258,26 @@ namespace SpaceGameContentPipeline
                         else if (type == "Turret" || type == "TurretTrack")
                         {
                             objects.Add(new TurretObject
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "ProximityMine")
+                        {
+                            objects.Add(new ProximityMine
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Ambient")
+                        {
+                            objects.Add(new Ambient
                             {
                                 props = properties,
                                 objectName = name,

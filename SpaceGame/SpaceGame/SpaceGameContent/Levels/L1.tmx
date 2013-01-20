@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="12" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="../TileSets/tileset.png" width="384" height="192"/>
+  <tile id="0">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tiles" width="16" height="12">
+  <data>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="16"/>
+   <tile gid="8"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="3"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="7"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="18"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="15"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="16" height="12">
+  <object name="ProximityMine" type="DeathZone" x="192" y="197" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="ProximityMine" type="DeathZone" x="399" y="119" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="ProximityMine" type="DeathZone" x="273" y="412" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="ProximityMine" type="DeathZone" x="561" y="285" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="ProximityMine" type="DeathZone" x="460" y="493" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="ProximityMine" type="DeathZone" x="732" y="104" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+   <object name="DoorYellow" type="Door" x="3" y="95" width="64" height="64">
+     <properties>
+       <property name="direction" value="left"/>
+       <property name="locked" value="0"/>
+     </properties>
+   </object>
+ </objectgroup>
+</map>
