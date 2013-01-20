@@ -10,7 +10,6 @@ namespace SpaceGame
 {
     class PlayerObject:MovingWorldObject
     {
-        private float speedMulti = 0.8f;
 
         public PlayerObject()
         {
@@ -36,8 +35,12 @@ namespace SpaceGame
         {
             //Console.WriteLine(this.hitBlocks);
             base.Update(gameTime);
-
+            float speedMulti = 0.8f;
             KeyboardState ks = Keyboard.GetState();
+            if (ks.IsKeyDown(Keys.Space))
+            {
+                speedMulti = 1.6f;
+            }
             if (ks.IsKeyDown(Keys.W) || ks.IsKeyDown(Keys.Up))
             {
                 this.velocity.Y -= 1 * speedMulti;
@@ -63,7 +66,14 @@ namespace SpaceGame
             }
             else
             {
-                this.texture.setAnim("stationary");
+                if (speedMulti >= 1.5f)
+                {
+                    this.texture.setAnim("boosting");
+                }
+                else
+                {
+                    this.texture.setAnim("stationary");
+                }
             }
         }
 
@@ -74,13 +84,13 @@ namespace SpaceGame
 
             subs.Add(new animationSub("stationary",0,0));
             subs.Add(new animationSub("walking",1,2));
+            subs.Add(new animationSub("boosting", 3, 4));
+
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("player"),64,subs);
 
             this.collider = new CircleCollider(new Vector2(32, 32), 30);
             this.texture.skipC = 10;
             this.texture.setAnim("stationary");
-
-
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SpaceGameContentPipeline
     public class Room
     {
         public Map map;
-        public List<WorldObject> objects;
+        public List<WorldObject> objects = new List<WorldObject>();
     }
 
     [ContentSerializerRuntimeType("SpaceGame.Map, SpaceGame")]
@@ -38,36 +38,35 @@ namespace SpaceGameContentPipeline
     [ContentSerializerRuntimeType("SpaceGame.WorldObject, SpaceGame")]
     public class WorldObject
     {
-        //direction faces;
-        //AnimatedTexture2D texture;
         public Vector2 position;
-        public Dictionary<String, String> properties;
+
+        public Boolean blocks;
+        public Boolean destroys;
+
+        public Boolean hitBlocks;
+        public Boolean hitdestroys;
+
+        public String objectName;
         public String type;
-        public float angle = 0f;
 
-        public Boolean blocks = false;
-        public Boolean destroys = false;
+        public Dictionary<String, String> props;
 
-        public Boolean hitBlocks = false;
-        public Boolean hitdestroys = false;
+        public float angle;
     }
 
     [ContentSerializerRuntimeType("SpaceGame.DeathZoneObject, SpaceGame")]
-    public class DeathZoneObject: WorldObject
+    public class DeathZoneObject : WorldObject
     {
-        //direction faces;
-        //AnimatedTexture2D texture;
-        public Vector2 position;
-        public Dictionary<String, String> properties;
-        public String type;
-        public float angle = 0f;
 
-        public Boolean blocks = false;
-        public Boolean destroys = false;
-
-        public Boolean hitBlocks = false;
-        public Boolean hitdestroys = false;
     }
+
+
+    [ContentSerializerRuntimeType("SpaceGame.HeatRayObject, SpaceGame")]
+    public class HeatRayObject : WorldObject
+    {
+
+    }
+
 
     /*
     [ContentSerializerRuntimeType("SpaceGame.AnimatedTexture2D, SpaceGame")]
@@ -138,7 +137,7 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-            System.Diagnostics.Debugger.Launch();
+            // System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
@@ -197,13 +196,9 @@ namespace SpaceGameContentPipeline
 
                                     sourceRect = tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Source;
 
-                                    if (tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties.ContainsKey("walkCost")) //0 is impassible , 100 is normal, init to zero
+                                    if (tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties.ContainsKey("walkCost"))
                                     {
                                         walkCost = Convert.ToInt16(tileSet.Tiles[(int)(tileIndex - tileSet.FirstId)].Properties["walkCost"]);
-                                    }
-                                    else
-                                    {
-                                        walkCost = 0;
                                     }
                                     // and break out of the foreach loop
                                     break;
@@ -235,7 +230,7 @@ namespace SpaceGameContentPipeline
                 {
 
                     //Variables
-                    Dictionary<String, String> objectProperties = null;
+                    Dictionary<String, String> properties = null;
                     Rectangle bounds = new Rectangle();
                     String name = null;
                     String type = null;
@@ -244,12 +239,11 @@ namespace SpaceGameContentPipeline
                     //outLayer.Objects = new HauntedHouseMapObjectContent[mapObjectLayerContent.Objects.Count];
                     MapObjectContent[] mapLayerObjects = objectLayerContent.Objects.ToArray();
 
-
                     for (int i = 0; i < mapLayerObjects.Length; i++)
                     {
                         if (mapLayerObjects[i].Properties != null)
                         {
-                            objectProperties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
+                            properties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
                         }
 
                         bounds = mapLayerObjects[i].Bounds;
@@ -257,30 +251,46 @@ namespace SpaceGameContentPipeline
                         type = mapLayerObjects[i].Type;
 
                         float x = (float)mapLayerObjects[i].Bounds.X;
-                        float y = mapLayerObjects[i].Bounds.Y;
+                        float y = (float)mapLayerObjects[i].Bounds.Y;
 
                         if (type == "DeathZone")
                         {
+                            // now insert the tile into our output
                             objects.Add(new DeathZoneObject
                             {
-                                properties = objectProperties,
+                                props = properties,
+                                objectName = name,
                                 type = type,
                                 position = new Vector2(x, y)
                             });
                         }
-                        if (type == "WorldObject")
+                        else if (type == "HeatRay")
+                        {
+                            // now insert the tile into our output
+                            objects.Add(new HeatRayObject
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Ambient")
                         {
                             objects.Add(new WorldObject
-                        {
-                            properties = objectProperties,
-                            type = type,
-                            position = new Vector2(x, y)
-                        });
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
                         }
-
                     }
+
                 }
             }
+
+
 
             Room output = new Room
             {

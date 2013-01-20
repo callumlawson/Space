@@ -52,7 +52,7 @@ namespace SpaceGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            testRoom = Content.Load<Room>("Levels/room1");
+            testRoom = Content.Load<Room>("Levels/room2");
 
             WorldObject player = new PlayerObject();
             testRoom.objects.Add(player);

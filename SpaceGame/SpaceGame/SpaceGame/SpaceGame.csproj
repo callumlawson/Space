@@ -79,6 +79,7 @@
     <Compile Include="CircleCollider.cs" />
     <Compile Include="Collider.cs" />
     <Compile Include="DeathZoneObject.cs" />
+    <Compile Include="HeatRay.cs" />
     <Compile Include="HeatRayObject.cs" />
     <Compile Include="IInitable.cs" />
     <Compile Include="IRenders.cs" />

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace SpaceGame
 {
-    class HeatRayObject:WorldObject
+    public class HeatRayObject:WorldObject
     {
         protected int chargeCounter = 0;
 
@@ -40,6 +40,12 @@ namespace SpaceGame
             {
                 chargeCounter = 0;
                 this.texture.setAnim("charging");
+            }
+            if (chargeCounter == chargeTime)
+            {
+                HeatRay hr = new HeatRay(fireTime);
+                hr.position = this.position;
+                hr.angle = this.angle;
             }
 
         }

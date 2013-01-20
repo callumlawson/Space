@@ -22,117 +22,13 @@
   <data>
    <tile gid="8"/>
    <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="17"/>
    <tile gid="4"/>
    <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="11"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="16"/>
+   <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="10"/>
-   <tile gid="12"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="11"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="7"/>
-   <tile gid="1"/>
-   <tile gid="10"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="4"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="1"/>
-   <tile gid="10"/>
-   <tile gid="12"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="11"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="11"/>
@@ -140,10 +36,53 @@
    <tile gid="4"/>
    <tile gid="16"/>
    <tile gid="8"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="12"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
    <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="17"/>
+   <tile gid="4"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -153,31 +92,117 @@
    <tile gid="1"/>
    <tile gid="7"/>
    <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="18"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="10"/>
    <tile gid="3"/>
    <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="17"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="10"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="7"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="10"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="15"/>
+   <tile gid="8"/>
    <tile gid="8"/>
   </data>
  </layer>
  <objectgroup name="Objects" width="15" height="10">
-  <object name="GasVent" type="DeathZone" x="448" y="192" width="64" height="64">
+  <object name="GasVent" type="DeathZone" x="576" y="192" width="64" height="64">
    <properties>
     <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="HeatRay" type="HeatRay" x="794" y="89">
+   <properties>
+    <property name="angle" value="45"/>
+    <property name="cooldown" value="5"/>
+   </properties>
+  </object>
+  <object name="GasVent" type="DeathZone" x="640" y="256" width="64" height="64">
+   <properties>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="HeatRay" type="HeatRay" x="219" y="93">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="cooldown" value="5"/>
+   </properties>
+  </object>
+  <object name="HeatRay" type="HeatRay" x="87" y="216">
+   <properties>
+    <property name="angle" value="-90"/>
+    <property name="cooldown" value="5"/>
    </properties>
   </object>
  </objectgroup>

@@ -16,14 +16,16 @@ namespace SpaceGame
         left,
         right
     };
-
+    public delegate void destroyMeEventHandler(WorldObject sender);
+    public delegate void addThisEventHandler(WorldObject sender,WorldObject newObject);
     public class WorldObject:IRenders,IUpdates,IInitable
     {
         //public List<SoundEffect> sounds;
 
-        public Vector2 position;
         protected AnimatedTexture2D texture;
         protected Collider collider;
+
+        public Vector2 position;
 
         public Boolean blocks;
         public Boolean destroys;
@@ -32,7 +34,9 @@ namespace SpaceGame
         public Boolean hitdestroys;
 
         public String objectName;
-        public Dictionary<String,String> properties;
+        public String type;
+
+        public Dictionary<String, String> props = new Dictionary<String, String>();
 
         public float angle;
 
@@ -72,5 +76,21 @@ namespace SpaceGame
             if (collider == null) return false;
             return collider.hit(map,hitPosition);
         }
+        public virtual void onDestroyMe()
+        {
+            if (destroyMe != null)
+            {
+                destroyMe(this);
+            }
+        }
+        public virtual void onAddThis(WorldObject newObject)
+        {
+            if (addThis != null)
+            {
+                addThis(this, newObject);
+            }
+        }
+        public event destroyMeEventHandler destroyMe;
+        public event addThisEventHandler addThis;
     }
 }

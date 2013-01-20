@@ -29,8 +29,7 @@ namespace SpaceGame
         protected int skip = 0;
         public int skipC = 0;
 
-        protected int subStart;
-        protected int subStop;
+        protected animationSub csub;
 
         protected List<animationSub> subs;
 
@@ -40,18 +39,21 @@ namespace SpaceGame
             this.width = width;
             this.subs = subs;
             this.frames = sheet.Width / width;
-            subStart = 0;
-            subStop = frames;
+            csub.startFrame = 0;
+            csub.stopFrame = frames;
         }
         public void setAnim(string id)
         {
-            foreach (animationSub sub in subs)
+            if (id != csub.id)
             {
-                if (sub.id == id)
+                foreach (animationSub sub in subs)
                 {
-                    subStart = sub.startFrame;
-                    subStop = sub.stopFrame;
-                    frame = subStart;
+                    if (sub.id != id)
+                    {
+                        csub.startFrame = sub.startFrame;
+                        csub.stopFrame = sub.stopFrame;
+                        frame = csub.startFrame;
+                    }
                 }
             }
         }
@@ -62,9 +64,9 @@ namespace SpaceGame
             {
                 skip = 0;
                 frame++;
-                if (frame > subStop)
+                if (frame > csub.stopFrame)
                 {
-                    frame = subStart;
+                    frame = csub.startFrame;
                 }
             }
         }

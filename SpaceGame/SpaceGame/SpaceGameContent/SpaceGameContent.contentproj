@@ -54,13 +54,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Levels\room1.tmx">
-      <Name>room1</Name>
-      <Importer>TmxImporter</Importer>
-      <Processor>MapProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Sounds\blackholedeath.wav">
       <Name>blackholedeath</Name>
       <Importer>WavImporter</Importer>
@@ -86,6 +79,13 @@
       <Name>lasersection</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Levels\room2.tmx">
+      <Name>room2</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
