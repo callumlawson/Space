@@ -56,7 +56,6 @@ namespace SpaceGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             List<Room> rooms = new List<Room>();
-            rooms.Add(Content.Load<Room>("Levels/room6"));
             rooms.Add(Content.Load<Room>("Levels/doortest1"));
             rooms.Add(Content.Load<Room>("Levels/doortest2"));
             rooms.Add(Content.Load<Room>("Levels/doortest3"));

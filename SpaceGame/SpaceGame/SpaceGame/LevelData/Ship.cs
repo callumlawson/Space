@@ -103,8 +103,6 @@ namespace SpaceGame
 
         void player_destroyMe(WorldObject sender,Boolean dyrmi)
         {
-            throw new NotImplementedException();
-
             if (dyrmi)
             {
               Console.WriteLine("DEAAAAAAAAAAAAAAAAAD");
