@@ -19,6 +19,9 @@ namespace SpaceGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Room testRoom;
+        Ship currentShip;
+
+        public static WorldObject hacks = null;
 
         public Game1()
         {
@@ -52,12 +55,31 @@ namespace SpaceGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            testRoom = Content.Load<Room>("Levels/room2");
+            List<Room> rooms = new List<Room>();
+            rooms.Add(Content.Load<Room>("Levels/room6"));
+            rooms.Add(Content.Load<Room>("Levels/doortest1"));
+            rooms.Add(Content.Load<Room>("Levels/doortest2"));
+            rooms.Add(Content.Load<Room>("Levels/doortest3"));
+            rooms.Add(Content.Load<Room>("Levels/doortest4"));
+            rooms.Add(Content.Load<Room>("Levels/doortest5"));
+            rooms.Add(Content.Load<Room>("Levels/doortest6"));
+            rooms.Add(Content.Load<Room>("Levels/doortest7"));
 
-            WorldObject player = new PlayerObject();
-            testRoom.objects.Add(player);
+            Song track1 = Content.Load<Song>("Sounds/phase1");
+            Song track2 = Content.Load<Song>("Sounds/phase2");
+            Song track3 = Content.Load<Song>("Sounds/phase3");
 
-            testRoom.Init(Content);
+            Song[] songs = new Song[]{track1,track2,track3};
+
+            MediaPlayer.Play(songs[1]);
+
+
+            //Need to create the first ship here
+            currentShip = new Ship(rooms);
+
+            //OLD for debug below
+            
+            currentShip.Init(Content);
             // TODO: use this.Content to load your game content here
         }
 
@@ -81,7 +103,7 @@ namespace SpaceGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            testRoom.Update(gameTime);
+          currentShip.Update(gameTime);
 
             // TODO: Add your update logic here
 
@@ -99,7 +121,7 @@ namespace SpaceGame
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            testRoom.Render(spriteBatch, new Vector2(), Color.White);
+            currentShip.Render(spriteBatch, new Vector2(), Color.White);
 
             spriteBatch.End();
 

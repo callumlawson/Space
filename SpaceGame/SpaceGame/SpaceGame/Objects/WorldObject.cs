@@ -14,9 +14,9 @@ namespace SpaceGame
         up,
         down,
         left,
-        right
+        right,
     };
-    public delegate void destroyMeEventHandler(WorldObject sender);
+    public delegate void destroyMeEventHandler(WorldObject sender,Boolean didYouReallyMeanIt);
     public delegate void addThisEventHandler(WorldObject sender,WorldObject newObject);
     public class WorldObject:IRenders,IUpdates,IInitable
     {
@@ -48,6 +48,20 @@ namespace SpaceGame
             }
         }
 
+        protected List<WorldObject> friends = new List<WorldObject>();
+
+        public void addFriend(WorldObject newFriend)
+        {
+            newFriend.destroyMe += new destroyMeEventHandler(newFriend_destroyMe);
+            friends.Add(newFriend);
+        }
+
+        void newFriend_destroyMe(WorldObject sender, Boolean dyrmi)
+        {
+            sender.destroyMe += new destroyMeEventHandler(newFriend_destroyMe);
+            friends.Remove(sender);
+        }
+
         public WorldObject()
         {
             
@@ -56,11 +70,25 @@ namespace SpaceGame
         public virtual void Init(ContentManager content)
         {
             //Must set/have by this point a: collider, animTexture.
+            if (props.ContainsKey("angle"))
+            {
+                this.angle = float.Parse(props["angle"]);
+            }
+        }
+
+        public virtual void Init(ContentManager content, Room room)
+        {
+            //Must set/have by this point a: collider, animTexture.
 
         }
         public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
+
             texture.Render(spriteBatch, position + offset, angle, tint);
+        }
+        public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint, Vector2 center)
+        {
+            texture.Render(spriteBatch, position + offset, angle, tint, center);
         }
         public virtual void Update(GameTime gameTime)
         {
@@ -69,6 +97,7 @@ namespace SpaceGame
         public virtual Boolean hits(WorldObject wo)
         {
             if (collider == null || wo.collider == null) return false;
+            if (this.friends.Contains(wo) || wo.friends.Contains(this)) return false;
             return collider.hit(wo.collider, hitPosition, wo.hitPosition);
         }
         public virtual Boolean hits(Map map)
@@ -78,9 +107,13 @@ namespace SpaceGame
         }
         public virtual void onDestroyMe()
         {
+            onDestroyMe(false);
+        }
+        public virtual void onDestroyMe(Boolean dyrmi)
+        {
             if (destroyMe != null)
             {
-                destroyMe(this);
+                destroyMe(this, dyrmi);
             }
         }
         public virtual void onAddThis(WorldObject newObject)

@@ -10,8 +10,8 @@ namespace SpaceGame
     {
         protected int chargeCounter = 0;
 
-        protected int chargeTime;
-        protected int fireTime;
+        protected int chargeTime = 25;
+        protected int fireTime = 20;
 
         public HeatRayObject()
         {
@@ -19,6 +19,7 @@ namespace SpaceGame
         }
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
+            this.angle = 0f ;
             base.Init(content);
             this.collider = new RectangleCollider(new Vector2(13, 13), new Vector2(56, 55));
             List<animationSub> subs = new List<animationSub>();
@@ -27,13 +28,13 @@ namespace SpaceGame
             subs.Add(new animationSub("fired", 5, 5));
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("laserdish"), 80, subs);
             this.texture.setAnim("charging");
-            this.texture.skipC = 2;
+            this.texture.skipC = 5;
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             base.Update(gameTime);
             chargeCounter++;
-            if (chargeCounter < chargeTime - 8) this.texture.setAnim("charging");
+            if (chargeCounter < chargeTime - 20) this.texture.setAnim("charging");
             else if (chargeCounter < chargeTime) this.texture.setAnim("firing");
             else if (chargeCounter < chargeTime + fireTime) this.texture.setAnim("fired");
             else
@@ -46,6 +47,7 @@ namespace SpaceGame
                 HeatRay hr = new HeatRay(fireTime);
                 hr.position = this.position;
                 hr.angle = this.angle;
+                this.onAddThis(hr);
             }
 
         }

@@ -67,6 +67,17 @@ namespace SpaceGameContentPipeline
 
     }
 
+    [ContentSerializerRuntimeType("SpaceGame.DoorObject, SpaceGame")]
+    public class DoorObject : WorldObject
+    {
+        public Room room = null;
+    }
+
+    [ContentSerializerRuntimeType("SpaceGame.TurretObject, SpaceGame")]
+    public class TurretObject : WorldObject
+    {
+
+    }
 
     /*
     [ContentSerializerRuntimeType("SpaceGame.AnimatedTexture2D, SpaceGame")]
@@ -180,7 +191,7 @@ namespace SpaceGameContentPipeline
                         Rectangle sourceRect = new Rectangle();
                         String imageSource = "NotDefined";
                         Boolean exists = true;
-                        int walkCost = 1;
+                        int walkCost = 0;
 
                         // iterate all the tile sets
                         foreach (var tileSet in input.TileSets)
@@ -278,6 +289,26 @@ namespace SpaceGameContentPipeline
                         else if (type == "Ambient")
                         {
                             objects.Add(new WorldObject
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Door")
+                        {
+                            objects.Add(new DoorObject
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Turret" || type == "TurretTrack")
+                        {
+                            objects.Add(new TurretObject
                             {
                                 props = properties,
                                 objectName = name,

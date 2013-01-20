@@ -30,50 +30,33 @@ namespace SpaceGame
         }
         public override bool hit(LineCollider c, Vector2 p1, Vector2 p2)
         {
-            Vector2 start = c.position + p2;
-            Vector2 end = c.position + p2;
-            Vector2 corner = position+p1;
-            float s1 = sideLine(corner.X, corner.Y, start, end);
-            float s2 = sideLine(corner.X + dimentions.X, corner.Y, start, end);
-            float s3 = sideLine(corner.X, corner.Y + dimentions.Y, start, end);
-            float s4 = sideLine(corner.X + dimentions.X, corner.Y + dimentions.Y, start, end);
-            if ((s1 > 0 && s2 > 0 && s3 > 0 && s4 > 0) || (s1 < 0 && s2 < 0 && s3 < 0 && s4 < 0))
+            if(hit(c.position,p1,p2) || hit(c.secondPosition,p1,p2)) return true;
+            foreach(LineCollider l in this.squareToLines())
             {
-                return false;
+                if(c.hit(l,p2,p1))return true;
             }
-            else
-            {
-                float xTR = corner.X + dimentions.X;
-                float xBL = corner.X;
-                float yTR = corner.Y;
-                float yBL = corner.Y + dimentions.Y;
-                return !((start.X > xTR && end.X > xTR) || (start.X < xBL && end.X < xBL) || (start.Y > yTR && end.Y > yTR) || (start.Y < yBL && end.Y < yBL));
-            }
+            return false;
         }
-        public float sideLine(float x, float y, Vector2 start, Vector2 finish)
+        public bool hit(Vector2 aPoint, Vector2 p1, Vector2 p2)
         {
-            return ((finish.Y - start.Y) * x) + ((start.Y - finish.Y) * y) + ((finish.X * start.Y) - (finish.Y * start.X));
+            aPoint += p2;
+            p1 += position;
+            return (aPoint.X >= p1.X && aPoint.X < p1.X + dimentions.X && aPoint.Y > p1.Y && aPoint.Y < p1.Y + dimentions.Y);
         }
         public override bool hit(CircleCollider c, Vector2 p1, Vector2 p2)
         {
             //check if circle inside square...
-            Vector2 cicleAt = c.position + p2;
-            Vector2 squareAt = position + p1;
-            if (cicleAt.X >= squareAt.X && cicleAt.X < squareAt.X + dimentions.X && cicleAt.Y > squareAt.Y && cicleAt.Y < squareAt.Y + dimentions.Y)
+            if (hit(c.position, p1, p2)) return true;
+
+            foreach (LineCollider l in this.squareToLines())
             {
-                return true;
-            }
-            else
-            {
-                foreach (LineCollider l in this.squareToLines())
+                if (c.hit(l, p2, p1))
                 {
-                    if (c.hit(l, p2, p1))
-                    {
-                        return true;
-                    }
+                   return true;
                 }
-                return false;
             }
+            return false;
+            
         }
         public LineCollider[] squareToLines()
         {

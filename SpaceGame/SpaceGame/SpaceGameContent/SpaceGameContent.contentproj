@@ -82,10 +82,101 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Levels\doortest1.tmx">
+      <Name>doortest1</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest2.tmx">
+      <Name>doortest2</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest3.tmx">
+      <Name>doortest3</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest4.tmx">
+      <Name>doortest4</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest5.tmx">
+      <Name>doortest5</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest6.tmx">
+      <Name>doortest6</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\doortest7.tmx">
+      <Name>doortest7</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Sounds\phase1.mp3">
+      <Name>phase1</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\phase2.mp3">
+      <Name>phase2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Sounds\phase3.mp3">
+      <Name>phase3</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Levels\room2.tmx">
       <Name>room2</Name>
       <Importer>TmxImporter</Importer>
       <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\room4.tmx">
+      <Name>room4</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\room6.tmx">
+      <Name>room6</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+    <Compile Include="Levels\room7.tmx">
+      <Name>room7</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="laserbeam.png">
+      <Name>laserbeam</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="projectile1.png">
+      <Name>projectile1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="turret1.png">
+      <Name>turret1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Turret2.png">
+      <Name>Turret2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

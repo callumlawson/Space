@@ -57,20 +57,63 @@ namespace SpaceGame
                         wos[i].hitBlocks = true;
                     }
                 }
+                if (wos[i].position.X < -100 || wos[i].position.Y < -100 || wos[i].position.X > 1124 || wos[i].position.Y > 868)
+                {
+                    wos[i].onDestroyMe();
+                }
             }
-
-            foreach (WorldObject wo in objects)
+            WorldObject[] war = new WorldObject[objects.Count];
+            objects.CopyTo(war);
+            foreach (WorldObject wo in war)
             {
                 wo.Update(gameTime);
                 wo.hitBlocks = false;
             }
+
         }
+
+        protected ContentManager hehehe;
         public void Init(ContentManager content)
         {
+            hehehe = content;
+
             foreach (WorldObject wo in objects)
             {
-                wo.Init(content);
+                wo.addThis += new addThisEventHandler(wo_addThis);
+                wo.destroyMe += new destroyMeEventHandler(wo_destroyMe);
+
+                if (wo.type == "Door")
+                {
+                    wo.Init(content, this); 
+                }
+                else
+                {
+                    wo.Init(content);
+                }
             }
         }
+        public void addWO(WorldObject wo)
+        {
+            wo.addThis += new addThisEventHandler(wo_addThis);
+            wo.destroyMe += new destroyMeEventHandler(wo_destroyMe);
+            this.objects.Add(wo);
+        }
+        void wo_destroyMe(WorldObject sender, Boolean dyrmi)
+        {
+            this.objects.Remove(sender);
+            sender.addThis -= new addThisEventHandler(wo_addThis);
+            sender.destroyMe -= new destroyMeEventHandler(wo_destroyMe);
+        }
+
+        void wo_addThis(WorldObject sender, WorldObject newObject)
+        {
+            newObject.Init(hehehe);
+            newObject.addThis += new addThisEventHandler(wo_addThis);
+            newObject.destroyMe += new destroyMeEventHandler(wo_destroyMe);
+
+            this.objects.Add(newObject);
+        }
+
+        
     }
 }

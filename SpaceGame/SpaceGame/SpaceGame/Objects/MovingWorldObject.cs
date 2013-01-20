@@ -6,10 +6,10 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
-    class MovingWorldObject:WorldObject
+    public class MovingWorldObject:WorldObject
     {
         protected Vector2 velocity;
-        protected float friction;
+        protected float friction = 1;
         
         public override Vector2 hitPosition
         {
@@ -24,8 +24,7 @@ namespace SpaceGame
         }
         public MovingWorldObject()
         {
-            this.position = new Vector2(130, 130);
-            this.friction = 0.8f;
+  
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {

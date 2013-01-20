@@ -10,10 +10,11 @@ namespace SpaceGame
 {
     class PlayerObject:MovingWorldObject
     {
+        public string transition = "none";
 
         public PlayerObject()
         {
-
+            this.friction = 0.8f;
         }
 
         public Vector2 hack1
@@ -33,7 +34,10 @@ namespace SpaceGame
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
-            //Console.WriteLine(this.hitBlocks);
+            if (this.hitdestroys)
+            {
+                this.onDestroyMe(true);
+            }
             base.Update(gameTime);
             float speedMulti = 0.8f;
             KeyboardState ks = Keyboard.GetState();
@@ -58,8 +62,7 @@ namespace SpaceGame
                 this.velocity.X += 1 * speedMulti;
             }
 
-            this.angle =  (float)Math.Atan2(this.velocity.Y, this.velocity.X);
-
+            this.angle = (float)Math.Atan2(this.velocity.Y, this.velocity.X) + MathHelper.PiOver2;
             if (velocity.Length() > 0.8f)
             {
                 this.texture.setAnim("walking");
@@ -75,6 +78,28 @@ namespace SpaceGame
                     this.texture.setAnim("stationary");
                 }
             }
+
+            //Have we left the room?
+            if (position.X > 1024)
+            {
+                transition = "right";
+            }
+            else if (position.X < 0)
+            {
+                transition = "left";
+            }
+             else if (position.Y > 768)
+            {
+                 transition = "down";
+            }
+             else if (position.Y < 0)
+            {
+                 transition = "up";
+            }
+            else{
+                 transition = "none";
+             }
+
         }
 
         public override void Init(ContentManager content)
@@ -88,9 +113,13 @@ namespace SpaceGame
 
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("player"),64,subs);
 
-            this.collider = new CircleCollider(new Vector2(32, 32), 30);
+            this.collider = new CircleCollider(new Vector2(32, 50), 30);
             this.texture.skipC = 10;
             this.texture.setAnim("stationary");
         }
+        public override void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
+        {
+            base.Render(spriteBatch, offset, tint, new Vector2(32, 32));
+        } 
     }
 }

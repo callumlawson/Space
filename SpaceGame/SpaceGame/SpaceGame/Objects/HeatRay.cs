@@ -2,24 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 namespace SpaceGame
 {
     public class HeatRay:WorldObject
     {
         protected int heatDuration;
+        protected int aNumber = 31;
+        protected Vector2 d ;
+
         public HeatRay(int duration)
         {
             heatDuration = duration;
-
         }
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
+            
             base.Init(content);
+            float sa = (float)Math.Sin(this.angle);
+            float ca = (float)Math.Cos(this.angle);
+            d = new Vector2(-sa * 44.5f, ca * 44.5f);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("lasersection"), 70, animationSub.def);
         }
         public override void Render(Microsoft.Xna.Framework.Graphics.SpriteBatch spriteBatch, Microsoft.Xna.Framework.Vector2 offset, Microsoft.Xna.Framework.Color tint)
         {
-            base.Render(spriteBatch, offset, tint);
+            for (int i = 0; i < aNumber; i++)
+            {
+                base.Render(spriteBatch, offset+(d*(float)(i+1)), tint,new Vector2(35f,22.5f));
+            }
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {

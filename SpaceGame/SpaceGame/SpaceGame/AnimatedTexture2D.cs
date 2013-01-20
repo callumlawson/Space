@@ -17,6 +17,15 @@ namespace SpaceGame
             this.startFrame = start;
             this.stopFrame = stop;
         }
+        public static List<animationSub> def
+        {
+            get
+            {
+                List<animationSub> ds= new List<animationSub>();
+                ds.Add(new animationSub("def", 0, 0));
+                return (ds);
+            }
+        }
     }
 
     public class AnimatedTexture2D:IRenders,IUpdates
@@ -40,7 +49,8 @@ namespace SpaceGame
             this.subs = subs;
             this.frames = sheet.Width / width;
             csub.startFrame = 0;
-            csub.stopFrame = frames;
+            csub.stopFrame = frames-1;
+            csub.id = "all";
         }
         public void setAnim(string id)
         {
@@ -75,10 +85,13 @@ namespace SpaceGame
         {
             spriteBatch.Draw(sheet, offset, new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint);
         }
-
         public void Render(SpriteBatch spriteBatch, Vector2 offset, float angle, Color tint)
         {
-            spriteBatch.Draw(sheet, new Rectangle((int)offset.X + width/2, (int)offset.Y + sheet.Height/2, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle + MathHelper.PiOver2), new Vector2(width / 2, sheet.Height / 2), SpriteEffects.None, 0f);
+            this.Render(spriteBatch, offset, angle, tint, new Vector2(width / 2, this.sheet.Height/2));
+        }
+        public void Render(SpriteBatch spriteBatch, Vector2 offset, float angle, Color tint,Vector2 rotateAbout)
+        {
+            spriteBatch.Draw(sheet, new Rectangle((int)offset.X + width/2, (int)offset.Y + sheet.Height/2, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle), rotateAbout, SpriteEffects.None, 0f);
         }
     }
 }
