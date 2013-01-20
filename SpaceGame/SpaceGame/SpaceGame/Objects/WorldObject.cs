@@ -16,8 +16,30 @@ namespace SpaceGame
         left,
         right,
     };
+    public enum objectMessageType
+    {
+        redButton,
+        cashGet
+    };
+    public class objectMessageEventArgs
+    {
+        public objectMessageType messageType;
+        public int cash = 0;
+        public objectMessageEventArgs(int cash)
+        {
+            this.messageType = objectMessageType.cashGet;
+            this.cash = cash;
+        }
+        public objectMessageEventArgs()
+        {
+            this.messageType = objectMessageType.redButton;
+        }
+    }
+
     public delegate void destroyMeEventHandler(WorldObject sender,Boolean didYouReallyMeanIt);
     public delegate void addThisEventHandler(WorldObject sender,WorldObject newObject);
+    public delegate void objectMessageEventHandler(WorldObject sender,objectMessageEventArgs args);
+
     public class WorldObject:IRenders,IUpdates,IInitable
     {
         //public List<SoundEffect> sounds;
@@ -125,7 +147,15 @@ namespace SpaceGame
                 addThis(this, newObject);
             }
         }
+        public virtual void onObjectMessage(objectMessageEventArgs args)
+        {
+            if(objectMessageEvent != null)
+            {
+                objectMessageEvent(this,args);
+            }
+        }
         public event destroyMeEventHandler destroyMe;
         public event addThisEventHandler addThis;
+        public event objectMessageEventHandler objectMessageEvent;
     }
 }

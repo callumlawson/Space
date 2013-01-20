@@ -35,10 +35,10 @@ namespace SpaceGame
             this.texture.animEndEvent -= new animEndEventDelegate(texture_animEndEvent);
             Random random = new Random();
             List<Shrapnel> toFriend = new List<Shrapnel>();
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 30; i++)
             {
                 float angle = (float)random.NextDouble() * MathHelper.TwoPi;
-                float speed = (float)random.NextDouble() * 20 + 20;
+                float speed = (float)random.NextDouble() * 10 + 10;
                 Vector2 vel = new Vector2(-(float)Math.Sin(angle) * speed, (float)Math.Cos(angle) * speed);
                 Shrapnel shrap = new Shrapnel(vel, random.Next(0,3));
                 foreach (Shrapnel s in toFriend)

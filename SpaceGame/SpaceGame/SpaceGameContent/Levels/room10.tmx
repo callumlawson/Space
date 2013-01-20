@@ -20,24 +20,45 @@
  </tileset>
  <layer name="Tiles" width="16" height="12">
   <data encoding="base64" compression="zlib">
-   eJzFkUsKwCAMRGNtU6zFfu5/2FpIYAiK6aqLhx9mTJwEIgo/Eg2707eJthgWp/cQ7Vm5KrPsPf4MWgbPe58G3lVWbvi/0PPr+5qPzQv/kEzPUyMfPN+O+agWZ8GQ8SgfzbZIvWh68ZClFtKr+wAlmAMk
+   eJydkEsOgDAIRBH8tNX7n1dMNCEEKLh4q+kjnSEAoJeLWRQ70wSbyqMMJz5O/IeTWQVd5VFWAZPvhtiLlCsza0urj7f1t8VR6GD5CPl+ll/B8/VmmW26c/fP3yL/BtxBAnw=
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="GasVent" type="DeathZone" x="415" y="380" width="64" height="64">
+  <object name="GasVent" type="DeathZone" x="64" y="64" width="64" height="64">
    <properties>
     <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="DoorYellow" type="Door" x="127" y="331" width="64" height="64">
+  <object name="ProximityMine" type="DeathZone" x="5" y="491" width="128" height="128">
+   <properties>
+    <property name="shape" value="1"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="DoorYellow" type="Door" x="2" y="384" width="64" height="64">
    <properties>
     <property name="direction" value="left"/>
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="Turret1" type="Turret" x="808" y="695" width="64" height="64">
+  <object name="DoorRed" type="Door" x="956" y="19" width="64" height="64">
+   <properties>
+    <property name="direction" value="right"/>
+    <property name="locked" value="1"/>
+   </properties>
+  </object>
+  <object name="HeatRay1" type="HeatRay" x="508" y="671" width="64" height="64">
+   <properties>
+    <property name="angle" value="0"/>
+    <property name="chargeTime" value="8"/>
+    <property name="fireTime" value="4"/>
+    <property name="triggered" value="0"/>
+   </properties>
+  </object>
+  <object name="Turret1" type="Turret" x="876" y="453" width="64" height="64">
    <properties>
     <property name="endAngle" value="180"/>
     <property name="projectileType" value="1"/>
@@ -48,7 +69,7 @@
     <property name="startAngle" value="0"/>
    </properties>
   </object>
-  <object name="Turret2" type="Turret" x="936" y="553" width="64" height="64">
+  <object name="Turret2" type="Turret" x="349" y="83" width="64" height="64">
    <properties>
     <property name="endAngle" value="90"/>
     <property name="projectileType" value="2"/>
@@ -59,7 +80,7 @@
     <property name="startAngle" value="0"/>
    </properties>
   </object>
-  <object name="HeatRay2" type="HeatRay" x="7" y="55" width="64" height="64">
+  <object name="HeatRay2" type="HeatRay" x="0" y="680" width="64" height="64">
    <properties>
     <property name="angle" value="0"/>
     <property name="chargeTime" value="16"/>
@@ -67,7 +88,8 @@
     <property name="triggered" value="1"/>
    </properties>
   </object>
-  <object name="Loot" type="Loot" x="805" y="415" width="64" height="64">
+  <object name="Puddle" type="Ambient" x="397" y="207" width="64" height="64"/>
+  <object name="Loot" type="Loot" x="516" y="384" width="64" height="64">
    <properties>
     <property name="blue" value="0.2"/>
     <property name="green" value="0.2"/>
@@ -76,25 +98,11 @@
     <property name="red" value="0.2"/>
    </properties>
   </object>
-  <object name="Loot" type="Loot" x="493" y="303" width="64" height="64">
+  <object name="Zapper" type="DeathZone" x="64" y="192" width="64" height="32">
    <properties>
-    <property name="blue" value="0.2"/>
-    <property name="green" value="0.2"/>
-    <property name="orange" value="0.2"/>
-    <property name="purple" value="0.2"/>
-    <property name="red" value="0.2"/>
-   </properties>
-  </object>
-  <object name="DoorRed" type="Door" x="954" y="8" width="64" height="64">
-   <properties>
-    <property name="direction" value="right"/>
-    <property name="locked" value="1"/>
-   </properties>
-  </object>
-  <object name="DoorYellow" type="Door" x="0" y="702" width="64" height="64">
-   <properties>
-    <property name="direction" value="left"/>
-    <property name="locked" value="0"/>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="30"/>
+    <property name="timeOn" value="60"/>
    </properties>
   </object>
  </objectgroup>

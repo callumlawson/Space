@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 namespace SpaceGame
 {
+    public delegate void RedButtonEventDelegate();
+    public delegate void lootEvenDelegate(int amount);
     public class Room:IRenders,IUpdates,IInitable
     {
         public Map map;
@@ -85,7 +87,7 @@ namespace SpaceGame
             {
                 wo.addThis += new addThisEventHandler(wo_addThis);
                 wo.destroyMe += new destroyMeEventHandler(wo_destroyMe);
-
+                wo.objectMessageEvent += new objectMessageEventHandler(wo_objectMessageEvent);
                 if (wo.type == "Door")
                 {
                     wo.Init(content, this); 
@@ -96,10 +98,29 @@ namespace SpaceGame
                 }
             }
         }
+
+        void wo_objectMessageEvent(WorldObject sender, objectMessageEventArgs args)
+        {
+            if (args.messageType == objectMessageType.redButton)
+            {
+                if (redButtonEvent != null)
+                {
+                    redButtonEvent();
+                }
+            }
+            else
+            {
+                if (lootEvent != null)
+                {
+                    lootEvent(args.cash);
+                }
+            }
+        }
         public void addWO(WorldObject wo)
         {
             wo.addThis += new addThisEventHandler(wo_addThis);
             wo.destroyMe += new destroyMeEventHandler(wo_destroyMe);
+            wo.objectMessageEvent += new objectMessageEventHandler(wo_objectMessageEvent);
             this.objects.Add(wo);
         }
         void wo_destroyMe(WorldObject sender, Boolean dyrmi)
@@ -107,6 +128,7 @@ namespace SpaceGame
             this.objects.Remove(sender);
             sender.addThis -= new addThisEventHandler(wo_addThis);
             sender.destroyMe -= new destroyMeEventHandler(wo_destroyMe);
+            sender.objectMessageEvent -= new objectMessageEventHandler(wo_objectMessageEvent);
         }
 
         void wo_addThis(WorldObject sender, WorldObject newObject)
@@ -117,7 +139,8 @@ namespace SpaceGame
 
             this.objects.Add(newObject);
         }
-
+        public event RedButtonEventDelegate redButtonEvent;
+        public event lootEvenDelegate lootEvent;
         
     }
 }

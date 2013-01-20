@@ -93,6 +93,7 @@
     <Compile Include="Objects\PlayerObject.cs" />
     <Compile Include="Objects\Projectile.cs" />
     <Compile Include="Objects\ProximityMine.cs" />
+    <Compile Include="Objects\RedButton.cs" />
     <Compile Include="Objects\Shrapnel.cs" />
     <Compile Include="Objects\TriggerObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

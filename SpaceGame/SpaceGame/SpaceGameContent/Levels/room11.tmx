@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="12" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="tileset" tilewidth="64" tileheight="64">
+  <image source="../TileSets/tileset.png" width="384" height="192"/>
+  <tile id="0">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <properties>
+    <property name="walkCost" value="100"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tiles" width="16" height="12">
+  <data encoding="base64" compression="zlib">
+   eJzNkdsKwCAMQ92cY9OBl///WFtoIUgF2V72EIQTAmmMzjlPekgbKAq3PPWZn6SLFAZfueWpH36Ub3Ar35Yh34DrJlnyiXSAboPNOLNd+rx9sRP29wtc/68aPQvcX43+Bfab7bu6/5d8km6jj11nPvMO1u8D3A==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="16" height="12">
+  <object name="GasVent" type="DeathZone" x="64" y="64" width="64" height="64">
+   <properties>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+  <object name="DoorYellow" type="Door" x="2" y="382" width="64" height="64">
+   <properties>
+    <property name="direction" value="left"/>
+    <property name="locked" value="0"/>
+   </properties>
+  </object>
+  <object name="DoorRed" type="Door" x="957" y="382" width="64" height="64">
+   <properties>
+    <property name="direction" value="right"/>
+    <property name="locked" value="1"/>
+   </properties>
+  </object>
+  <object name="TurretTrack" type="TurretTrack" x="742" y="633" width="64" height="64">
+   <properties>
+    <property name="projectileType" value="3"/>
+    <property name="rateOfFire" value="3"/>
+    <property name="rateOfRotation" value="1"/>
+    <property name="timeFiring" value="5"/>
+    <property name="timeIdle" value="2"/>
+   </properties>
+  </object>
+  <object name="Loot" type="Loot" x="265" y="382" width="64" height="64">
+   <properties>
+    <property name="blue" value="0.2"/>
+    <property name="green" value="0.2"/>
+    <property name="orange" value="0.2"/>
+    <property name="purple" value="0.2"/>
+    <property name="red" value="0.2"/>
+   </properties>
+  </object>
+  <object name="Zapper" type="DeathZone" x="64" y="192" width="64" height="32">
+   <properties>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="30"/>
+    <property name="timeOn" value="60"/>
+   </properties>
+  </object>
+  <object name="Loot" type="Loot" x="767" y="381" width="64" height="64">
+   <properties>
+    <property name="blue" value="0.2"/>
+    <property name="green" value="0.2"/>
+    <property name="orange" value="0.2"/>
+    <property name="purple" value="0.2"/>
+    <property name="red" value="0.2"/>
+   </properties>
+  </object>
+  <object name="TurretTrack" type="TurretTrack" x="217" y="636" width="64" height="64">
+   <properties>
+    <property name="projectileType" value="3"/>
+    <property name="rateOfFire" value="3"/>
+    <property name="rateOfRotation" value="1"/>
+    <property name="timeFiring" value="5"/>
+    <property name="timeIdle" value="2"/>
+   </properties>
+  </object>
+  <object name="TurretTrack" type="TurretTrack" x="735" y="92" width="64" height="64">
+   <properties>
+    <property name="projectileType" value="3"/>
+    <property name="rateOfFire" value="3"/>
+    <property name="rateOfRotation" value="1"/>
+    <property name="timeFiring" value="5"/>
+    <property name="timeIdle" value="2"/>
+   </properties>
+  </object>
+  <object name="TurretTrack" type="TurretTrack" x="251" y="98" width="64" height="64">
+   <properties>
+    <property name="projectileType" value="3"/>
+    <property name="rateOfFire" value="3"/>
+    <property name="rateOfRotation" value="1"/>
+    <property name="timeFiring" value="5"/>
+    <property name="timeIdle" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

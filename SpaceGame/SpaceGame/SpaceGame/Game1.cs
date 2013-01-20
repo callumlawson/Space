@@ -63,12 +63,13 @@ namespace SpaceGame
             List<Room> rooms = new List<Room>();
 
             rooms.Add(Content.Load<Room>("Levels/U1"));
-            rooms.Add(Content.Load<Room>("Levels/LD1"));
-            rooms.Add(Content.Load<Room>("Levels/LU1"));
-            rooms.Add(Content.Load<Room>("Levels/UR1"));
-            rooms.Add(Content.Load<Room>("Levels/RD1"));
-            rooms.Add(Content.Load<Room>("Levels/UR1"));
-            rooms.Add(Content.Load<Room>("Levels/L1"));
+            rooms.Add(Content.Load<Room>("Levels/room7"));
+            rooms.Add(Content.Load<Room>("Levels/room8"));
+            rooms.Add(Content.Load<Room>("Levels/room9"));
+            rooms.Add(Content.Load<Room>("Levels/room10"));
+            rooms.Add(Content.Load<Room>("Levels/room11"));
+            rooms.Add(Content.Load<Room>("Levels/room12"));
+            rooms.Add(Content.Load<Room>("Levels/room13"));
 
             //deathSplash = Content.Load<Texture2D>("deathsplash");
 

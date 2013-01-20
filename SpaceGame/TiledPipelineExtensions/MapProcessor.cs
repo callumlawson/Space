@@ -100,6 +100,21 @@ namespace SpaceGameContentPipeline
     {
 
     }
+    [ContentSerializerRuntimeType("SpaceGame.RedButton, SpaceGame")]
+    public class RedButton : TriggerObject
+    {
+
+    }
+    [ContentSerializerRuntimeType("SpaceGame.LootObject, SpaceGame")]
+    public class LootObject : TriggerObject
+    {
+
+    }
+    [ContentSerializerRuntimeType("SpaceGame.GassVentObject, SpaceGame")]
+    public class GasVentObject : TriggerObject
+    {
+
+    }
 
     [ContentProcessor(DisplayName = "TMX Processor - SpaceGame")]
     public class MapProcessor : ContentProcessor<MapContent, Room>
@@ -278,6 +293,36 @@ namespace SpaceGameContentPipeline
                         else if (type == "Ambient")
                         {
                             objects.Add(new Ambient
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Controls")
+                        {
+                            objects.Add(new RedButton
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "Loot")
+                        {
+                            objects.Add(new LootObject
+                            {
+                                props = properties,
+                                objectName = name,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "GasVent")
+                        {
+                            objects.Add(new GasVentObject
                             {
                                 props = properties,
                                 objectName = name,
