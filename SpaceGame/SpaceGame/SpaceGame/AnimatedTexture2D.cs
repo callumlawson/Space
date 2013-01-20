@@ -51,6 +51,7 @@ namespace SpaceGame
                 {
                     subStart = sub.startFrame;
                     subStop = sub.stopFrame;
+                    frame = subStart;
                 }
             }
         }
