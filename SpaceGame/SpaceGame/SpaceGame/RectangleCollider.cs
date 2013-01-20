@@ -87,7 +87,7 @@ namespace SpaceGame
         }
         public override bool hit(Map map, Vector2 p)
         {
-            List<RectangleCollider> recs = fromMap(position, dimentions, map);
+            List<RectangleCollider> recs = fromMap(position + p, dimentions, map);
             foreach (RectangleCollider re in recs)
             {
                 if (this.hit(re, p, new Vector2(0, 0)))

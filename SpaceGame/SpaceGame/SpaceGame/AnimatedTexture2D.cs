@@ -74,7 +74,7 @@ namespace SpaceGame
 
         public void Render(SpriteBatch spriteBatch, Vector2 offset, float angle, Color tint)
         {
-            spriteBatch.Draw(sheet, new Rectangle((int)offset.X, (int)offset.Y, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle + MathHelper.PiOver2), new Vector2(width / 2, sheet.Height / 2), SpriteEffects.None, 0f);
+            spriteBatch.Draw(sheet, new Rectangle((int)offset.X + width/2, (int)offset.Y + sheet.Height/2, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle + MathHelper.PiOver2), new Vector2(width / 2, sheet.Height / 2), SpriteEffects.None, 0f);
         }
     }
 }

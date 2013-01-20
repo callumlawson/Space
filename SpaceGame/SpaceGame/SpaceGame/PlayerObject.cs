@@ -16,9 +16,26 @@ namespace SpaceGame
         {
 
         }
+
+        public Vector2 hack1
+        {
+            get
+            {
+                return new Vector2(velocity.X, 0);
+            }
+        }
+        public Vector2 hack2
+        {
+            get
+            {
+                return new Vector2(0, velocity.Y);
+            }
+        }
+
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             Console.WriteLine(this.hitBlocks);
+            base.Update(gameTime);
 
             KeyboardState ks = Keyboard.GetState();
             if (ks.IsKeyDown(Keys.W) || ks.IsKeyDown(Keys.Up))
@@ -48,8 +65,6 @@ namespace SpaceGame
             {
                 this.texture.setAnim("stationary");
             }
-
-            base.Update(gameTime);
         }
 
         public override void Init(ContentManager content)

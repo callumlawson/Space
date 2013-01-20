@@ -32,11 +32,15 @@ namespace SpaceGame
         {
             Vector2 ss = new Vector2(map.tileSize, map.tileSize);
             List<RectangleCollider> output = new List<RectangleCollider>();
-            for (int i = ((int)topLeft.X) % map.tileSize; i <= ((int)(topLeft.X + dimentions.X) + 1) % map.tileSize; i++)
+            int tileMinX = ((int)topLeft.X) / map.tileSize;
+            int tileMinY = ((int)topLeft.Y) / map.tileSize;
+            int tileMaxX = (((int)(topLeft.X + dimentions.X)) / map.tileSize)+1;
+            int tileMaxY = (((int)(topLeft.Y + dimentions.Y)) / map.tileSize)+1;
+            for (int i = tileMinX; i <= tileMaxX; i++)
             {
-                for (int j = ((int)topLeft.Y) % map.tileSize; j <= ((int)(topLeft.Y + dimentions.Y) + 1) % map.tileSize; j++)
+                for (int j = tileMinY; j <= tileMaxY; j++)
                 {
-                    if (map.tiles[i + (j * map.width)].walkCost != 0)
+                    if (map.tiles[i + (j * map.width)].walkCost == 0)
                     {
                         Vector2 position = new Vector2(i * map.tileSize, j * map.tileSize);
                         output.Add(new RectangleCollider(position, ss));

@@ -20,7 +20,7 @@ namespace SpaceGame
         }
         public override bool hit(RectangleCollider c, Vector2 p1, Vector2 p2)
         {
-            return c.hit(this, p1, p2);
+            return c.hit(this, p2, p1);
         }
         public override bool hit(LineCollider lc, Vector2 p1, Vector2 p2)
         {
@@ -58,7 +58,7 @@ namespace SpaceGame
         }
         public override bool hit(Map map, Vector2 p)
         {
-            List<RectangleCollider> recs = fromMap(position - new Vector2(radius,radius), position + new Vector2(radius,radius), map);
+            List<RectangleCollider> recs = fromMap(p + position - new Vector2(radius,radius), new Vector2(2*radius,2*radius), map);
             foreach (RectangleCollider re in recs)
             {
                 if (this.hit(re, p, new Vector2(0, 0)))

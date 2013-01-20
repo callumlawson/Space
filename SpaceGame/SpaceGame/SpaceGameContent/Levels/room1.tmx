@@ -172,5 +172,13 @@
    <tile gid="8"/>
   </data>
  </layer>
- <objectgroup name="Objects" width="15" height="10"/>
+ <objectgroup name="Objects" width="15" height="10">
+  <object name="GasVent" type="DeathZone" x="448" y="192" width="64" height="64">
+   <properties>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

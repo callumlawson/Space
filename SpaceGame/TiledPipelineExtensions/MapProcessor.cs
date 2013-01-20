@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Audio;
 using TiledLib;
 using System;
 
@@ -38,6 +39,7 @@ namespace SpaceGameContentPipeline
     [ContentSerializerRuntimeType("SpaceGame.WorldObject, SpaceGame")]
     public class WorldObject
     {
+        public List<SoundEffect> sounds = new List<SoundEffect>();
         //direction faces;
         //AnimatedTexture2D texture;
         public Vector2 position;
@@ -50,6 +52,12 @@ namespace SpaceGameContentPipeline
 
         public Boolean hitBlocks = false;
         public Boolean hitdestroys = false;
+    }
+
+    [ContentSerializerRuntimeType("SpaceGame.DeathZoneObject, SpaceGame")]
+    public class DeathZoneObject: WorldObject
+    {
+        
     }
 
     /*
@@ -242,13 +250,27 @@ namespace SpaceGameContentPipeline
                         float x = (float)mapLayerObjects[i].Bounds.X;
                         float y = mapLayerObjects[i].Bounds.Y;
 
-                        // now insert the tile into our output
-                        objects.Add(new WorldObject
+                        //TODO Add stuff
+
+                        if (type == "DangerZone")
+                        {
+                            objects.Add(new DeathZoneObject
+                            {
+                                properties = properties,
+                                type = type,
+                                position = new Vector2(x, y)
+                            });
+                        }
+                        else if (type == "WorldObject")
+                        {
+                            objects.Add(new WorldObject
                         {
                             properties = properties,
                             type = type,
                             position = new Vector2(x, y)
                         });
+                        }
+
                     }
                 }
             }

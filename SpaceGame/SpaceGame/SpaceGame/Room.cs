@@ -40,16 +40,28 @@ namespace SpaceGame
                         if (wos[j].destroys) wos[i].destroys = true;
                     }
                 }
-                if (wos[i].hits(map))
+                if (!wos[i].hitBlocks)
                 {
-                    wos[i].hitBlocks = true;
+                    if (wos[i].hits(map))
+                    {
+                        //AWESOME FUCKING HACK
+                        if (wos[i].GetType() == typeof(PlayerObject))
+                        {
+                            PlayerObject po = (PlayerObject)wos[i];
+                            Vector2 hold = po.hack2;
+                            po.setVelocity(po.hack1);
+                            if (!po.hits(map)) continue;
+                            po.setVelocity(hold);
+                            if (!po.hits(map)) continue;
+                        }
+                        wos[i].hitBlocks = true;
+                    }
                 }
             }
 
             foreach (WorldObject wo in objects)
             {
                 wo.Update(gameTime);
-                wo.hitBlocks = false;
                 wo.hitBlocks = false;
             }
         }

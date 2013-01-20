@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Audio;
+
 namespace SpaceGame
 {
     public enum direction
@@ -17,6 +19,8 @@ namespace SpaceGame
 
     public class WorldObject:IRenders,IUpdates,IInitable
     {
+        public List<SoundEffect> sounds;
+
         public Vector2 position;
         protected AnimatedTexture2D texture;
         protected Collider collider;
@@ -27,6 +31,10 @@ namespace SpaceGame
         public Boolean hitBlocks;
         public Boolean hitdestroys;
 
+        public String name;
+
+        public Dictionary<String,String> properties;
+
         public float angle;
 
         public virtual Vector2 hitPosition
@@ -36,13 +44,17 @@ namespace SpaceGame
                 return position;
             }
         }
+
         public WorldObject()
         {
             
         }
+
         public virtual void Init(ContentManager content)
         {
             //Must set/have by this point a: collider, animTexture.
+
+
         }
         public virtual void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {

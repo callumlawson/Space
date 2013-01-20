@@ -78,6 +78,7 @@
     <Compile Include="AnimatedTexture2D.cs" />
     <Compile Include="CircleCollider.cs" />
     <Compile Include="Collider.cs" />
+    <Compile Include="DeathZoneObject.cs" />
     <Compile Include="IInitable.cs" />
     <Compile Include="IRenders.cs" />
     <Compile Include="IUpdates.cs" />
