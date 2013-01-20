@@ -36,7 +36,7 @@ namespace SpaceGame
         {
             if (this.hitdestroys)
             {
-                this.onDestroyMe(true);
+               // this.onDestroyMe(true);
             }
             base.Update(gameTime);
             float speedMulti = 0.8f;
@@ -69,6 +69,7 @@ namespace SpaceGame
                 this.texture.setAnim("stationary");
             }
 
+            Console.WriteLine(transition);
             //Have we left the room?
             if (position.X > 1024)
             {

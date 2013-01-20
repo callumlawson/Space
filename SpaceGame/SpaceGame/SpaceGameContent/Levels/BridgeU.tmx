@@ -22,6 +22,10 @@
   <data>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -34,6 +38,10 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -46,6 +54,14 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="16"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -54,6 +70,14 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -62,6 +86,14 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -70,16 +102,14 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
+   <tile gid="18"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -92,30 +122,14 @@
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="17"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="16"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -128,10 +142,26 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -144,37 +174,7 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
+   <tile gid="15"/>
    <tile gid="8"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -215,28 +215,15 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="DoorYellow" type="Door" x="959" y="347" width="64" height="64">
+  <object name="DoorYellow" type="Door" x="217" y="5" width="64" height="64">
    <properties>
-    <property name="direction" value="right"/>
+    <property name="direction" value="up"/>
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="Puddle" type="Ambient" x="521" y="330" width="64" height="64">
+  <object name="Controls" type="Controls" x="384" y="511" width="256" height="64">
    <properties>
-    <property name="imageName" value="puddle"/>
-    <property name="width" value="64"/>
-   </properties>
-  </object>
-  <object name="Puddle" type="Ambient" x="617" y="364" width="64" height="64">
-   <properties>
-    <property name="imageName" value="puddle"/>
-    <property name="width" value="64"/>
-   </properties>
-  </object>
-  <object name="Puddle" type="Ambient" x="766" y="325" width="64" height="64">
-   <properties>
-    <property name="imageName" value="puddle"/>
-    <property name="width" value="64"/>
+    <property name="angle" value="180"/>
    </properties>
   </object>
  </objectgroup>

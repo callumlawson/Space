@@ -240,6 +240,7 @@
   <object name="Puddle" type="Ambient" x="579" y="320" width="64" height="64">
    <properties>
     <property name="imageName" value="puddle"/>
+    <property name="width" value="64"/>
    </properties>
   </object>
   <object name="DoorYellow" type="Door" x="156" y="-3" width="64" height="64">

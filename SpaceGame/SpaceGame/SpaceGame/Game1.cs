@@ -22,6 +22,11 @@ namespace SpaceGame
         Ship currentShip;
 
         Texture2D deathSplash;
+        Texture2D pauseSplash;
+
+        SpriteFont mainFont;
+
+        SoundEffect death;
 
         Boolean paused = false;
         Boolean defeat = false;
@@ -60,22 +65,26 @@ namespace SpaceGame
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            mainFont = Content.Load<SpriteFont>("mainfont");
+
             List<Room> rooms = new List<Room>();
 
             rooms.Add(Content.Load<Room>("Levels/U1"));
-            rooms.Add(Content.Load<Room>("Levels/room7"));
-            rooms.Add(Content.Load<Room>("Levels/room8"));
-            rooms.Add(Content.Load<Room>("Levels/room9"));
-            rooms.Add(Content.Load<Room>("Levels/room10"));
-            rooms.Add(Content.Load<Room>("Levels/room11"));
-            rooms.Add(Content.Load<Room>("Levels/room12"));
-            rooms.Add(Content.Load<Room>("Levels/room13"));
+            rooms.Add(Content.Load<Room>("Levels/LD1"));
+            rooms.Add(Content.Load<Room>("Levels/LU1"));
+           // rooms.Add(Content.Load<Room>("Levels/UR1"));
+           // rooms.Add(Content.Load<Room>("Levels/RD1"));
+           // rooms.Add(Content.Load<Room>("Levels/UR1"));
+           // rooms.Add(Content.Load<Room>("Levels/L1"));
 
-            //deathSplash = Content.Load<Texture2D>("deathsplash");
+            deathSplash = Content.Load<Texture2D>("deathsplash");
+            pauseSplash = Content.Load<Texture2D>("pausesplash");
 
             Song track1 = Content.Load<Song>("Sounds/phase1");
             Song track2 = Content.Load<Song>("Sounds/phase2");
             Song track3 = Content.Load<Song>("Sounds/phase3");
+
+            //death = Content.Load<SoundEffect>("Sounds/death");
 
             Song[] songs = new Song[] { track1, track2, track3 };
 
@@ -105,23 +114,59 @@ namespace SpaceGame
         /// checking for collisions, gathering input, and playing audio.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        /// 
+        private int inputDelay = 0;
+        private int defeatDelay = 0;
         protected override void Update(GameTime gameTime)
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            //TODO pause button
+            KeyboardState key = Keyboard.GetState();
+            if (key.IsKeyDown(Keys.Space))
+            {
+                if (defeat)
+                {
+                    currentShip = null;
+                    Content.Unload();
+                    this.LoadContent();
+                    defeat = false;
+                }
+            }
+            else if (key.IsKeyDown(Keys.P))
+            {
+                if (inputDelay > 20)
+                {
+                    if (paused) { paused = false; }
+                    else { paused = true; }
+                    inputDelay = 0;
+                }
+            }
+
+            if (currentShip.defeat)
+            {
+                //MediaPlayer.Pause();
+                
+               // death.Play();
+
+                defeatDelay++;
+                if (defeatDelay > 100)
+                {
+                    this.defeat = true;
+                    defeatDelay = 0;
+                }
+            }
 
             if (!paused)
             {
                 currentShip.Update(gameTime);
 
                 // TODO: Add your update logic here
-
                 base.Update(gameTime);
             }
 
+            inputDelay++;
         }
 
         /// <summary>
@@ -137,17 +182,17 @@ namespace SpaceGame
             GraphicsDevice.Clear(new Color(105, 105, 105));
             Color toUse = Color.White;
 
-
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
             if (paused)
             {
-
+                spriteBatch.Draw(pauseSplash, new Rectangle(0,0,1024,768), Color.White);
             }
             else if (defeat)
             {
-
+                spriteBatch.Draw(deathSplash, new Rectangle(0,0,1024,768), Color.White);
+                spriteBatch.DrawString(mainFont, "Press Space to Continue", new Vector2(300, 700), Color.White);
             }
             else if (currentShip.alarm)
             {

@@ -9,19 +9,6 @@ using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
-    /*
-    public struct Door
-    {
-        public Room room;
-        public WorldObject point;
-
-        public Door(Room room, WorldObject point)
-        {
-            this.room = room;
-            this.point = point;
-        }
-    }
-     */
 
     public class Ship : IUpdates
     {
@@ -42,6 +29,10 @@ namespace SpaceGame
         private ContentManager content;
 
         private PlayerObject player;
+
+        public Boolean defeat;
+
+        public Boolean foundBridge = false;
 
         public Boolean alarm;
 
@@ -82,7 +73,6 @@ namespace SpaceGame
 
             currentRoom.objects.Add(player);
 
-
             foreach (Room room in rooms)
             {
                 room.Init(content);
@@ -119,6 +109,7 @@ namespace SpaceGame
             if (dyrmi)
             {
                 Console.WriteLine("DEAAAAAAAAAAAAAAAAAD");
+                this.defeat = true;
             }
         }
 
@@ -187,30 +178,6 @@ namespace SpaceGame
                             else
                             {
 
-
-                                /*
-                                for (int attempts = 0; attempts <= 5; attempts++)
-                                {
-                                    Room temproom;
-                                    int random = rand.Next(toRooms.Count);
-                                    temproom = toRooms[random];
-                                    if (temproom != previousRoom)
-                                    {
-                                        currentRoom = temproom;
-                                        toRooms.Remove(currentRoom);
-                                        fromRooms.Remove(previousRoom);
-                                        break;
-                                    }
-
-                                    if (attempts == 5)
-                                    {
-                                        currentRoom = loadDeadend(directionTo);
-                                        fromRooms.Remove(previousRoom);
-                                        break;
-                                    }
-                                }
-                                */
-
                                 if (toRooms.Count != 0)
                                 {
                                     while (true)
@@ -223,7 +190,7 @@ namespace SpaceGame
 
                                         if (possibleRoom != previousRoom)
                                         {
-                                            currentRoom = possibleRoom;
+                                            currentRoom = createRoom(possibleRoom);
                                             toRooms.Remove(currentRoom);
                                             fromRooms.Remove(previousRoom);
                                             break;
@@ -235,9 +202,20 @@ namespace SpaceGame
 
                                         if (possibleRooms.Count == 0)
                                         {
-                                            currentRoom = loadDeadend(directionTo);
-                                            fromRooms.Remove(previousRoom);
-                                            break;
+                                            if (toRooms.Count + fromRooms.Count >= 4)
+                                            {
+                                                currentRoom = createRoom(loadDeadend(directionTo));
+                                                fromRooms.Remove(previousRoom);
+                                                break;
+                                            }
+                                            else if (!foundBridge)
+                                            {
+                                                currentRoom = createRoom(loadBridge(directionTo));
+                                                currentRoom.redButtonEvent += new RedButtonEventDelegate(currentRoom_redButtonEvent);
+                                                fromRooms.Remove(previousRoom);
+                                                foundBridge = true;
+                                                break;
+                                            }
                                         }
                                     }
 
@@ -268,8 +246,21 @@ namespace SpaceGame
             currentRoom.Update(gameTime);
         }
 
+        public Room createRoom(Room room)
+        {
+            room.lootEvent += new lootEvenDelegate(room_lootEvent);
+            return room;
+        }
 
+        void room_lootEvent(int amount)
+        {
+               throw new NotImplementedException();
+        }
 
+        void currentRoom_redButtonEvent()
+        {
+            alarm = true;
+        }
 
         public Room loadDeadend(String direction)
         {
@@ -290,7 +281,32 @@ namespace SpaceGame
             {
                 room = content.Load<Room>("Levels/D1");
             }
+            room = createRoom(room);
+            room.Init(content);
 
+            return room;
+        }
+
+        public Room loadBridge(String direction)
+        {
+            Room room = null;
+            if (direction == "left")
+            {
+                room = content.Load<Room>("Levels/BridgeL");
+            }
+            if (direction == "right")
+            {
+                room = content.Load<Room>("Levels/BridgeR");
+            }
+            if (direction == "up")
+            {
+                room = content.Load<Room>("Levels/BridgeU");
+            }
+            if (direction == "down")
+            {
+                room = content.Load<Room>("Levels/BridgeD");
+            }
+            room = createRoom(room);
             room.Init(content);
 
             return room;

@@ -221,10 +221,10 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="HeatRay1" type="HeatRay" x="725" y="19" width="84" height="79">
+  <object name="HeatRay1" type="HeatRay" x="727" y="95" width="84" height="79">
    <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
+    <property name="angle" value="-110"/>
+    <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
    </properties>
@@ -256,42 +256,18 @@
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="HeatRay1" type="HeatRay" x="727" y="111" width="84" height="79">
+  <object name="HeatRay1" type="HeatRay" x="727" y="267" width="84" height="79">
    <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
+    <property name="angle" value="-110"/>
+    <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
    </properties>
   </object>
-  <object name="HeatRay1" type="HeatRay" x="727" y="200" width="84" height="79">
+  <object name="HeatRay1" type="HeatRay" x="726" y="423" width="84" height="79">
    <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
-    <property name="fireTime" value="36"/>
-    <property name="triggered" value="1"/>
-   </properties>
-  </object>
-  <object name="HeatRay1" type="HeatRay" x="728" y="291" width="84" height="79">
-   <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
-    <property name="fireTime" value="36"/>
-    <property name="triggered" value="1"/>
-   </properties>
-  </object>
-  <object name="HeatRay1" type="HeatRay" x="728" y="384" width="84" height="79">
-   <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
-    <property name="fireTime" value="36"/>
-    <property name="triggered" value="1"/>
-   </properties>
-  </object>
-  <object name="HeatRay1" type="HeatRay" x="728" y="472" width="84" height="79">
-   <properties>
-    <property name="angle" value="-80"/>
-    <property name="chargeTime" value="36"/>
+    <property name="angle" value="-110"/>
+    <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
    </properties>
