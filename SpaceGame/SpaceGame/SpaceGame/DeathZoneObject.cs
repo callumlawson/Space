@@ -22,10 +22,12 @@ namespace SpaceGame
 
         public override void Init(ContentManager content)
         {
+
+
             Console.WriteLine("Yes!");
-            if(name == "GasVent")
-            {
-                sounds.Add((SoundEffect) content.Load<SoundEffect>("Sounds/blackholedeath")); //Hit is sound one
+           // if(name == "GasVent")
+            //{
+                //sounds.Add((SoundEffect) content.Load<SoundEffect>("Sounds/blackholedeath")); //Hit is sound one
 
                 List<animationSub> subs = new List<animationSub>();
 
@@ -34,7 +36,7 @@ namespace SpaceGame
                 //subs.Add(new animationSub("triggered", 1, 2));
 
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("Traps/gasvent"), 64, subs);
-            }
+            //}
         }
     }
 }

@@ -40,7 +40,6 @@ namespace SpaceGame
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-           
             base.Initialize();
         }
 
@@ -52,6 +51,7 @@ namespace SpaceGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
             testRoom = Content.Load<Room>("Levels/room1");
 
             WorldObject player = new PlayerObject();

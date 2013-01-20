@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Audio;
 using TiledLib;
 using System;
 
@@ -31,6 +30,7 @@ namespace SpaceGameContentPipeline
     public class Tile
     {
         public int walkCost;
+        //public ExternalReference<Texture2DContent> tex;
         public ExternalReference<Texture2DContent> tex;
         public Rectangle sourceRect;
     }
@@ -38,14 +38,11 @@ namespace SpaceGameContentPipeline
     [ContentSerializerRuntimeType("SpaceGame.WorldObject, SpaceGame")]
     public class WorldObject
     {
-        public List<SoundEffect> sounds = new List<SoundEffect>();
         //direction faces;
         //AnimatedTexture2D texture;
         public Vector2 position;
-
-        public Dictionary<String, String> properties = new Dictionary<string,string>();
-        public String name = "";
-
+        public Dictionary<String, String> properties;
+        public String type;
         public float angle = 0f;
 
         public Boolean blocks = false;
@@ -58,7 +55,18 @@ namespace SpaceGameContentPipeline
     [ContentSerializerRuntimeType("SpaceGame.DeathZoneObject, SpaceGame")]
     public class DeathZoneObject: WorldObject
     {
-        
+        //direction faces;
+        //AnimatedTexture2D texture;
+        public Vector2 position;
+        public Dictionary<String, String> properties;
+        public String type;
+        public float angle = 0f;
+
+        public Boolean blocks = false;
+        public Boolean destroys = false;
+
+        public Boolean hitBlocks = false;
+        public Boolean hitdestroys = false;
     }
 
     /*
@@ -130,7 +138,7 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-            // System.Diagnostics.Debugger.Launch();
+            System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
@@ -227,7 +235,7 @@ namespace SpaceGameContentPipeline
                 {
 
                     //Variables
-                    Dictionary<String, String> properties = null;
+                    Dictionary<String, String> objectProperties = null;
                     Rectangle bounds = new Rectangle();
                     String name = null;
                     String type = null;
@@ -241,7 +249,7 @@ namespace SpaceGameContentPipeline
                     {
                         if (mapLayerObjects[i].Properties != null)
                         {
-                            //properties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
+                            objectProperties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
                         }
 
                         bounds = mapLayerObjects[i].Bounds;
@@ -249,25 +257,23 @@ namespace SpaceGameContentPipeline
                         type = mapLayerObjects[i].Type;
 
                         float x = (float)mapLayerObjects[i].Bounds.X;
-                        float y = (float)mapLayerObjects[i].Bounds.Y;
-
-                        //TODO Add stuff
+                        float y = mapLayerObjects[i].Bounds.Y;
 
                         if (type == "DeathZone")
                         {
                             objects.Add(new DeathZoneObject
                             {
-                                properties = properties,
-                                //name = name,
+                                properties = objectProperties,
+                                type = type,
                                 position = new Vector2(x, y)
                             });
                         }
-                        else if (type == "WorldObject")
+                        if (type == "WorldObject")
                         {
                             objects.Add(new WorldObject
                         {
-                            properties = properties,
-                            name = name,
+                            properties = objectProperties,
+                            type = type,
                             position = new Vector2(x, y)
                         });
                         }
