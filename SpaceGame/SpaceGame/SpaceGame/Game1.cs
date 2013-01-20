@@ -54,10 +54,10 @@ namespace SpaceGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
             testRoom = Content.Load<Room>("Levels/room1");
 
-            WorldObject wo = new PlayerObject();
+            WorldObject player = new PlayerObject();
+            testRoom.objects.Add(player);
 
-            wo.Init(Content);
-            testRoom.objects.Add(wo);
+            testRoom.Init(Content);
             // TODO: use this.Content to load your game content here
         }
 

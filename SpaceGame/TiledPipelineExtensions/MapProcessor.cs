@@ -31,7 +31,6 @@ namespace SpaceGameContentPipeline
     public class Tile
     {
         public int walkCost;
-        //public ExternalReference<Texture2DContent> tex;
         public ExternalReference<Texture2DContent> tex;
         public Rectangle sourceRect;
     }
@@ -43,8 +42,10 @@ namespace SpaceGameContentPipeline
         //direction faces;
         //AnimatedTexture2D texture;
         public Vector2 position;
-        public Dictionary<String, String> properties = new Dictionary<string, string>();
-        public String type;
+
+        public Dictionary<String, String> properties = new Dictionary<string,string>();
+        public String name = "";
+
         public float angle = 0f;
 
         public Boolean blocks = false;
@@ -240,7 +241,7 @@ namespace SpaceGameContentPipeline
                     {
                         if (mapLayerObjects[i].Properties != null)
                         {
-                            properties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
+                            //properties = new Dictionary<string, string>(mapLayerObjects[i].Properties);
                         }
 
                         bounds = mapLayerObjects[i].Bounds;
@@ -248,16 +249,16 @@ namespace SpaceGameContentPipeline
                         type = mapLayerObjects[i].Type;
 
                         float x = (float)mapLayerObjects[i].Bounds.X;
-                        float y = mapLayerObjects[i].Bounds.Y;
+                        float y = (float)mapLayerObjects[i].Bounds.Y;
 
                         //TODO Add stuff
 
-                        if (type == "DangerZone")
+                        if (type == "DeathZone")
                         {
                             objects.Add(new DeathZoneObject
                             {
                                 properties = properties,
-                                type = type,
+                                //name = name,
                                 position = new Vector2(x, y)
                             });
                         }
@@ -266,7 +267,7 @@ namespace SpaceGameContentPipeline
                             objects.Add(new WorldObject
                         {
                             properties = properties,
-                            type = type,
+                            name = name,
                             position = new Vector2(x, y)
                         });
                         }

@@ -18,6 +18,7 @@ namespace SpaceGame
             this.stopFrame = stop;
         }
     }
+
     public class AnimatedTexture2D:IRenders,IUpdates
     {
         protected Texture2D sheet;

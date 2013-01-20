@@ -32,7 +32,6 @@ namespace SpaceGame
         public Boolean hitdestroys;
 
         public String name;
-
         public Dictionary<String,String> properties;
 
         public float angle;

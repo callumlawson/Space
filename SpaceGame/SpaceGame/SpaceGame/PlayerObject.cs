@@ -34,7 +34,7 @@ namespace SpaceGame
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
-            Console.WriteLine(this.hitBlocks);
+            //Console.WriteLine(this.hitBlocks);
             base.Update(gameTime);
 
             KeyboardState ks = Keyboard.GetState();
@@ -70,10 +70,12 @@ namespace SpaceGame
         public override void Init(ContentManager content)
         {
             base.Init(content);
-            List<animationSub> subs= new List<animationSub>();
+            List<animationSub> subs = new List<animationSub>();
+
             subs.Add(new animationSub("stationary",0,0));
             subs.Add(new animationSub("walking",1,2));
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("player"),64,subs);
+
             this.collider = new CircleCollider(new Vector2(32, 32), 30);
             this.texture.skipC = 10;
             this.texture.setAnim("stationary");
