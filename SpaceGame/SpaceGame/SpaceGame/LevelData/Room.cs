@@ -35,9 +35,11 @@ namespace SpaceGame
                     if (wos[i].hits(wos[j]))
                     {
                         if (wos[i].blocks) wos[j].hitBlocks = true;
-                        if (wos[i].destroys) wos[j].destroys = true;
+                        if (wos[i].destroys) wos[j].hitdestroys = true;
                         if (wos[j].blocks) wos[i].hitBlocks = true;
-                        if (wos[j].destroys) wos[i].destroys = true;
+                        if (wos[j].destroys) wos[i].hitdestroys = true;
+                        if (wos[i].triggers) wos[j].hitTriggers = true;
+                        if (wos[j].triggers) wos[i].hitTriggers = true;
                     }
                 }
                 if (!wos[i].hitBlocks)
@@ -68,6 +70,8 @@ namespace SpaceGame
             {
                 wo.Update(gameTime);
                 wo.hitBlocks = false;
+                wo.hitdestroys = false;
+                wo.hitTriggers = false;
             }
 
         }

@@ -63,7 +63,7 @@ namespace SpaceGame
 
             player = new PlayerObject();
             player.destroyMe += new destroyMeEventHandler(player_destroyMe);
-            player.position = new Vector2(400,400);
+            player.position = new Vector2(300,400);
 
             Game1.hacks = player;
 
@@ -111,7 +111,6 @@ namespace SpaceGame
 
         public void Update(GameTime gameTime)
         {
-            Console.WriteLine(player.transition);
 
             DoorObject previousDoor = null;
             DoorObject newDoor = null;

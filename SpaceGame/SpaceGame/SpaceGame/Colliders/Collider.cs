@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+
 namespace SpaceGame
 {
     public abstract class Collider
@@ -25,6 +26,10 @@ namespace SpaceGame
             else if (c.GetType() == typeof(LineCollider))
             {
                 return hit((LineCollider)c, p1, p2);
+            }
+            else if (c.GetType() == typeof(CombiCollider))
+            {
+                return hit((CombiCollider)c, p1, p2);
             }
             return false;
         }
@@ -57,6 +62,10 @@ namespace SpaceGame
         public abstract Boolean hit(CircleCollider c, Vector2 p1, Vector2 p2);
         public abstract Boolean hit(RectangleCollider c, Vector2 p1,Vector2 p2);
         public abstract Boolean hit(LineCollider c, Vector2 p1, Vector2 p2);
+        public virtual bool hit(CombiCollider c, Vector2 p1, Vector2 p2)
+        {
+            return c.hit(this, p2, p1);
+        }
         public abstract Boolean hit(Map map, Vector2 p);
     }
 }

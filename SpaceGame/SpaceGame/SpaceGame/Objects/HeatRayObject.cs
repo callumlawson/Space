@@ -10,7 +10,7 @@ namespace SpaceGame
     {
         protected int chargeCounter = 0;
 
-        protected int chargeTime = 25;
+        protected int chargeTime = 50;
         protected int fireTime = 20;
 
         public HeatRayObject()
@@ -19,7 +19,7 @@ namespace SpaceGame
         }
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
-            this.angle = 0f ;
+            this.angle = 3f ;
             base.Init(content);
             this.collider = new RectangleCollider(new Vector2(13, 13), new Vector2(56, 55));
             List<animationSub> subs = new List<animationSub>();
@@ -28,13 +28,21 @@ namespace SpaceGame
             subs.Add(new animationSub("fired", 5, 5));
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("laserdish"), 80, subs);
             this.texture.setAnim("charging");
-            this.texture.skipC = 5;
+            this.texture.skipC = 8;
+            if (props.ContainsKey("chargeTime"))
+            {
+                chargeTime = Int16.Parse(props["chargeTime"]);
+            }
+            if (props.ContainsKey("fireTime"))
+            {
+                fireTime = Int16.Parse(props["fireTime"]);
+            }
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             base.Update(gameTime);
             chargeCounter++;
-            if (chargeCounter < chargeTime - 20) this.texture.setAnim("charging");
+            if (chargeCounter < chargeTime - (32)) this.texture.setAnim("charging");
             else if (chargeCounter < chargeTime) this.texture.setAnim("firing");
             else if (chargeCounter < chargeTime + fireTime) this.texture.setAnim("fired");
             else
@@ -45,11 +53,15 @@ namespace SpaceGame
             if (chargeCounter == chargeTime)
             {
                 HeatRay hr = new HeatRay(fireTime);
-                hr.position = this.position;
+                hr.position = this.position + new Vector2(0f, 0f);
                 hr.angle = this.angle;
                 this.onAddThis(hr);
             }
 
+        }
+        public override void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
+        {
+            base.Render(spriteBatch, offset, tint, new Vector2(40,40));
         }
     }
 }

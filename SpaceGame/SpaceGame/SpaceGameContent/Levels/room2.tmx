@@ -193,17 +193,6 @@
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="HeatRay" type="HeatRay" x="219" y="93">
-   <properties>
-    <property name="angle" value="0"/>
-    <property name="cooldown" value="5"/>
-   </properties>
-  </object>
-  <object name="HeatRay" type="HeatRay" x="87" y="216">
-   <properties>
-    <property name="angle" value="-90"/>
-    <property name="cooldown" value="5"/>
-   </properties>
-  </object>
+
  </objectgroup>
 </map>

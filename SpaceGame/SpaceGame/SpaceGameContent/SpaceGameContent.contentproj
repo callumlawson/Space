@@ -140,6 +140,7 @@
       <Name>room2</Name>
       <Importer>TmxImporter</Importer>
       <Processor>MapProcessor</Processor>
+      <SubType>Designer</SubType>
     </Compile>
     <Compile Include="Levels\room4.tmx">
       <Name>room4</Name>
@@ -177,6 +178,13 @@
       <Name>Turret2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Levels\turrettest.tmx">
+      <Name>turrettest</Name>
+      <Importer>TmxImporter</Importer>
+      <Processor>MapProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

@@ -42,9 +42,11 @@ namespace SpaceGameContentPipeline
 
         public Boolean blocks;
         public Boolean destroys;
+        public Boolean triggers = false;
 
         public Boolean hitBlocks;
         public Boolean hitdestroys;
+        public Boolean hittriggers;
 
         public String objectName;
         public String type;

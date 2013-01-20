@@ -41,10 +41,6 @@ namespace SpaceGame
             base.Update(gameTime);
             float speedMulti = 0.8f;
             KeyboardState ks = Keyboard.GetState();
-            if (ks.IsKeyDown(Keys.Space))
-            {
-                speedMulti = 1.6f;
-            }
             if (ks.IsKeyDown(Keys.W) || ks.IsKeyDown(Keys.Up))
             {
                 this.velocity.Y -= 1 * speedMulti;
@@ -63,20 +59,14 @@ namespace SpaceGame
             }
 
             this.angle = (float)Math.Atan2(this.velocity.Y, this.velocity.X) + MathHelper.PiOver2;
+
             if (velocity.Length() > 0.8f)
             {
                 this.texture.setAnim("walking");
             }
             else
             {
-                if (speedMulti >= 1.5f)
-                {
-                    this.texture.setAnim("boosting");
-                }
-                else
-                {
-                    this.texture.setAnim("stationary");
-                }
+                this.texture.setAnim("stationary");
             }
 
             //Have we left the room?

@@ -49,6 +49,7 @@ namespace SpaceGame
             }
             return false;
         }
+        public static float low = 9999999f;
         public override bool hit(CircleCollider c, Vector2 p1, Vector2 p2)
         {
             float sqDistance = ((position + p1) - (c.position + p2)).LengthSquared();

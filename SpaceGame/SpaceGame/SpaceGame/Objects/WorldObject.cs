@@ -29,9 +29,11 @@ namespace SpaceGame
 
         public Boolean blocks;
         public Boolean destroys;
+        public Boolean triggers;
 
         public Boolean hitBlocks;
         public Boolean hitdestroys;
+        public Boolean hitTriggers;
 
         public String objectName;
         public String type;

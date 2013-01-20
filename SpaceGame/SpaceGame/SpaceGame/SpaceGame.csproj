@@ -78,6 +78,7 @@
     <Compile Include="AnimatedTexture2D.cs" />
     <Compile Include="Colliders\CircleCollider.cs" />
     <Compile Include="Colliders\Collider.cs" />
+    <Compile Include="Colliders\CombiCollider.cs" />
     <Compile Include="Objects\DeathZoneObject.cs" />
     <Compile Include="Objects\DoorObject.cs" />
     <Compile Include="Objects\HeatRay.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Objects\MovingWorldObject.cs" />
     <Compile Include="Objects\PlayerObject.cs" />
     <Compile Include="Objects\Projectile.cs" />
+    <Compile Include="Objects\TriggerObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />

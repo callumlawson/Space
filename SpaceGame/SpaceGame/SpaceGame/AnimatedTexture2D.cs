@@ -27,7 +27,7 @@ namespace SpaceGame
             }
         }
     }
-
+    public delegate void animEndEventDelegate(AnimatedTexture2D sender);
     public class AnimatedTexture2D:IRenders,IUpdates
     {
         protected Texture2D sheet;
@@ -58,11 +58,11 @@ namespace SpaceGame
             {
                 foreach (animationSub sub in subs)
                 {
-                    if (sub.id != id)
+                    if (sub.id == id)
                     {
-                        csub.startFrame = sub.startFrame;
-                        csub.stopFrame = sub.stopFrame;
+                        csub = sub;
                         frame = csub.startFrame;
+                        break;
                     }
                 }
             }
@@ -77,10 +77,14 @@ namespace SpaceGame
                 if (frame > csub.stopFrame)
                 {
                     frame = csub.startFrame;
+                    if (animEndEvent != null)
+                    {
+                        animEndEvent(this);
+                    }
                 }
             }
         }
-
+        public event animEndEventDelegate animEndEvent;
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
             spriteBatch.Draw(sheet, offset, new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint);
@@ -91,7 +95,7 @@ namespace SpaceGame
         }
         public void Render(SpriteBatch spriteBatch, Vector2 offset, float angle, Color tint,Vector2 rotateAbout)
         {
-            spriteBatch.Draw(sheet, new Rectangle((int)offset.X + width/2, (int)offset.Y + sheet.Height/2, width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle), rotateAbout, SpriteEffects.None, 0f);
+            spriteBatch.Draw(sheet, new Rectangle((int)(offset.X + rotateAbout.X), (int)(offset.Y + rotateAbout.Y), width, sheet.Height), new Rectangle?(new Rectangle(frame * width, 0, width, sheet.Height)), tint, (angle), rotateAbout, SpriteEffects.None, 0f);
         }
     }
 }

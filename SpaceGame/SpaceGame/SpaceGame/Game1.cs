@@ -56,7 +56,7 @@ namespace SpaceGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             List<Room> rooms = new List<Room>();
-            rooms.Add(Content.Load<Room>("Levels/doortest1"));
+            rooms.Add(Content.Load<Room>("Levels/room7"));
             rooms.Add(Content.Load<Room>("Levels/doortest2"));
             rooms.Add(Content.Load<Room>("Levels/doortest3"));
             rooms.Add(Content.Load<Room>("Levels/doortest4"));
@@ -115,7 +115,7 @@ namespace SpaceGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(new Color(105,105,105));
+            GraphicsDevice.Clear(new Color(105, 105, 105));
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();

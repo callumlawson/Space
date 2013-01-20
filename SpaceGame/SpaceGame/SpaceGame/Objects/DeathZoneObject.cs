@@ -36,6 +36,7 @@ namespace SpaceGame
                 //subs.Add(new animationSub("triggered", 1, 2));
 
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("Traps/gasvent"), 64, subs);
+               
             //}
         }
     }
