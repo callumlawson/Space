@@ -107,7 +107,7 @@ namespace SpaceGameContentPipeline
         public override Room Process(MapContent input, ContentProcessorContext context)
         {
 
-            System.Diagnostics.Debugger.Launch();
+           // System.Diagnostics.Debugger.Launch();
 
 
             TiledHelpers.BuildTileSetTextures(input, context);
@@ -237,7 +237,7 @@ namespace SpaceGameContentPipeline
                         }
                         else if (type == "Ambient")
                         {
-                            objects.Add(new WorldObject
+                            objects.Add(new Ambient
                             {
                                 props = properties,
                                 objectName = name,

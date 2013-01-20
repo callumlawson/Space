@@ -20,14 +20,11 @@
  </tileset>
  <layer name="Tiles" width="16" height="12">
   <data>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="17"/>
    <tile gid="4"/>
    <tile gid="4"/>
    <tile gid="4"/>
@@ -36,14 +33,14 @@
    <tile gid="4"/>
    <tile gid="16"/>
    <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -52,14 +49,14 @@
    <tile gid="1"/>
    <tile gid="6"/>
    <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -68,23 +65,105 @@
    <tile gid="1"/>
    <tile gid="6"/>
    <tile gid="8"/>
-   <tile gid="3"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="10"/>
    <tile gid="12"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="17"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="10"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
    <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -92,15 +171,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -108,15 +179,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -124,31 +187,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="7"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -156,31 +195,7 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
    <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="2"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
    <tile gid="18"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -188,6 +203,8 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
+   <tile gid="15"/>
+   <tile gid="18"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -195,72 +212,88 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="15"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="ProximityMine" type="ProximityMine" x="192" y="197" width="128" height="128">
+  <object name="DoorYellow" type="Door" x="96" y="4" width="64" height="64">
    <properties>
-    <property name="shape" value="1"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
-  <object name="DoorYellow" type="Door" x="3" y="95" width="64" height="64">
-   <properties>
-    <property name="direction" value="left"/>
+    <property name="direction" value="up"/>
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="ProximityMine" type="ProximityMine" x="399" y="119" width="128" height="128">
+  <object name="HeatRay1" type="HeatRay" x="725" y="19" width="84" height="79">
    <properties>
-    <property name="shape" value="1"/>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
+   </properties>
+  </object>
+  <object name="DoorYellow" type="Door" x="957" y="351" width="64" height="64">
+   <properties>
+    <property name="direction" value="right"/>
+    <property name="locked" value="0"/>
+   </properties>
+  </object>
+  <object name="GasVent" type="DeathZone" x="323" y="65" width="64" height="64">
+   <properties>
+    <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="ProximityMine" type="ProximityMine" x="273" y="412" width="128" height="128">
+  <object name="GasVent" type="DeathZone" x="65" y="637" width="64" height="64">
    <properties>
-    <property name="shape" value="1"/>
+    <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="ProximityMine" type="ProximityMine" x="561" y="285" width="128" height="128">
+  <object name="GasVent" type="DeathZone" x="579" y="637" width="64" height="64">
    <properties>
-    <property name="shape" value="1"/>
+    <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="ProximityMine" type="ProximityMine" x="460" y="493" width="128" height="128">
+  <object name="HeatRay1" type="HeatRay" x="727" y="111" width="84" height="79">
    <properties>
-    <property name="shape" value="1"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
    </properties>
   </object>
-  <object name="ProximityMine" type="ProximityMine" x="732" y="104" width="128" height="128">
+  <object name="HeatRay1" type="HeatRay" x="727" y="200" width="84" height="79">
    <properties>
-    <property name="shape" value="1"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
+   </properties>
+  </object>
+  <object name="HeatRay1" type="HeatRay" x="728" y="291" width="84" height="79">
+   <properties>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
+   </properties>
+  </object>
+  <object name="HeatRay1" type="HeatRay" x="728" y="384" width="84" height="79">
+   <properties>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
+   </properties>
+  </object>
+  <object name="HeatRay1" type="HeatRay" x="728" y="472" width="84" height="79">
+   <properties>
+    <property name="angle" value="-80"/>
+    <property name="chargeTime" value="36"/>
+    <property name="fireTime" value="36"/>
+    <property name="triggered" value="1"/>
    </properties>
   </object>
  </objectgroup>

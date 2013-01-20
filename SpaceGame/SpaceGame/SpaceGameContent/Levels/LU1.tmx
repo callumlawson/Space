@@ -20,13 +20,13 @@
  </tileset>
  <layer name="Tiles" width="16" height="12">
   <data>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="16"/>
    <tile gid="17"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
    <tile gid="4"/>
    <tile gid="4"/>
    <tile gid="4"/>
@@ -36,58 +36,10 @@
    <tile gid="4"/>
    <tile gid="4"/>
    <tile gid="16"/>
+   <tile gid="8"/>
    <tile gid="5"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="10"/>
-   <tile gid="12"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="2"/>
    <tile gid="1"/>
    <tile gid="11"/>
    <tile gid="9"/>
@@ -100,74 +52,12 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="6"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="7"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="3"/>
-   <tile gid="12"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="10"/>
-   <tile gid="3"/>
+   <tile gid="8"/>
+   <tile gid="18"/>
    <tile gid="12"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="17"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="4"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="11"/>
-   <tile gid="4"/>
-   <tile gid="9"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="2"/>
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -177,24 +67,6 @@
    <tile gid="1"/>
    <tile gid="1"/>
    <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="6"/>
-   <tile gid="8"/>
-   <tile gid="8"/>
-   <tile gid="5"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="7"/>
    <tile gid="6"/>
    <tile gid="8"/>
    <tile gid="8"/>
@@ -202,7 +74,135 @@
    <tile gid="12"/>
    <tile gid="1"/>
    <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="7"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="16"/>
+   <tile gid="18"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="16"/>
+   <tile gid="8"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="11"/>
+   <tile gid="4"/>
+   <tile gid="4"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="10"/>
+   <tile gid="3"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="18"/>
+   <tile gid="12"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="11"/>
+   <tile gid="4"/>
+   <tile gid="9"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="5"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="6"/>
+   <tile gid="8"/>
+   <tile gid="18"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -215,45 +215,37 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="ProximityMine" type="ProximityMine" x="99" y="104" width="128" height="128">
+  <object name="GasVent" type="DeathZone" x="261" y="576" width="64" height="64">
    <properties>
-    <property name="shape" value="1"/>
+    <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>
     <property name="timeOn" value="0"/>
    </properties>
   </object>
-  <object name="DoorYellow" type="Door" x="1" y="351" width="64" height="64">
+  <object name="DoorYellow" type="Door" x="5" y="356" width="64" height="64">
    <properties>
     <property name="direction" value="left"/>
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="Turret1" type="Turret" x="897" y="128" width="64" height="64">
+  <object name="TurretTrack" type="TurretTrack" x="705" y="107" width="64" height="64">
    <properties>
-    <property name="endAngle" value="90"/>
-    <property name="projectileType" value="1"/>
-    <property name="rateOfFire" value="9"/>
+    <property name="projectileType" value="3"/>
+    <property name="rateOfFire" value="5"/>
     <property name="rateOfRotation" value="1"/>
-    <property name="rotationsFiring" value="1"/>
-    <property name="rotationsIdle" value="1"/>
-    <property name="startAngle" value="-90"/>
+    <property name="timeFiring" value="0"/>
+    <property name="timeIdle" value="0"/>
    </properties>
   </object>
-  <object name="DoorYellow" type="Door" x="287" y="701" width="64" height="64">
+  <object name="Puddle" type="Ambient" x="579" y="320" width="64" height="64">
    <properties>
-    <property name="direction" value="down"/>
+    <property name="imageName" value="puddle"/>
+   </properties>
+  </object>
+  <object name="DoorYellow" type="Door" x="156" y="-3" width="64" height="64">
+   <properties>
+    <property name="direction" value="up"/>
     <property name="locked" value="0"/>
-   </properties>
-  </object>
-  <object name="Turret1" type="Turret" x="515" y="384" width="64" height="64">
-   <properties>
-    <property name="endAngle" value="270"/>
-    <property name="projectileType" value="1"/>
-    <property name="rateOfFire" value="9"/>
-    <property name="rateOfRotation" value="1"/>
-    <property name="rotationsFiring" value="1"/>
-    <property name="rotationsIdle" value="1"/>
-    <property name="startAngle" value="0"/>
    </properties>
   </object>
  </objectgroup>

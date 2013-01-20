@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-namespace SpaceGame.Objects
+namespace SpaceGame
 {
     public class Ambient:WorldObject
     {
@@ -17,6 +17,7 @@ namespace SpaceGame.Objects
             base.Init(content);
             Texture2D getTex = content.Load<Texture2D>(props["imageName"]);
             int witdth = getTex.Width;
+
             if(props.ContainsKey("width"))
             {
                 witdth = int.Parse(props["width"]);

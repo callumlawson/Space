@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework;
 
 namespace SpaceGame
 {
@@ -38,9 +39,13 @@ namespace SpaceGame
 
         private Room currentRoom;
 
+        private ContentManager content;
+
         private PlayerObject player;
 
-        Random rand;
+        public Boolean alarm;
+
+        public Random rand;
         //protected Door mainEntry;
 
         public Ship(List<Room> rooms)
@@ -52,6 +57,8 @@ namespace SpaceGame
             upRooms = new List<Room>();
             downRooms = new List<Room>();
 
+            rand = new Random();
+
             doorLinks = new Dictionary<DoorObject, DoorObject>();
         }
 
@@ -59,11 +66,17 @@ namespace SpaceGame
         {
             rand = new Random();
 
+            this.content = content;
+
             currentRoom = rooms[0];
 
             player = new PlayerObject();
             player.destroyMe += new destroyMeEventHandler(player_destroyMe);
-            player.position = new Vector2(300,400);
+
+            player.position = new Vector2(300, 400);
+
+            player.position = new Vector2(400, 400);
+
 
             Game1.hacks = player;
 
@@ -101,11 +114,11 @@ namespace SpaceGame
 
         }
 
-        void player_destroyMe(WorldObject sender,Boolean dyrmi)
+        void player_destroyMe(WorldObject sender, Boolean dyrmi)
         {
             if (dyrmi)
             {
-              Console.WriteLine("DEAAAAAAAAAAAAAAAAAD");
+                Console.WriteLine("DEAAAAAAAAAAAAAAAAAD");
             }
         }
 
@@ -117,7 +130,7 @@ namespace SpaceGame
 
             Room previousRoom = currentRoom;
 
-            
+
             String directionFrom = player.transition;
             String directionTo = "";
 
@@ -173,38 +186,114 @@ namespace SpaceGame
                             }
                             else
                             {
-                                int random = rand.Next(toRooms.Count);
-                                currentRoom = toRooms[random];
-                                toRooms.Remove(currentRoom);
-                                fromRooms.Remove(previousRoom);
 
-                                foreach (WorldObject anotherWorldObject in currentRoom.objects)
+
+                                /*
+                                for (int attempts = 0; attempts <= 5; attempts++)
                                 {
-                                    if (anotherWorldObject.type == "Door")
+                                    Room temproom;
+                                    int random = rand.Next(toRooms.Count);
+                                    temproom = toRooms[random];
+                                    if (temproom != previousRoom)
                                     {
-                                        DoorObject anotherDoor = (DoorObject)anotherWorldObject;
-                                        if (anotherDoor.props["direction"] == directionTo)
-                                        {
-                                            newDoor = anotherDoor;
-                                            player.position = anotherDoor.position;
-                                            doorLinks.Add(previousDoor, newDoor);
-                                            doorLinks.Add(newDoor, previousDoor);
-                                        }
+                                        currentRoom = temproom;
+                                        toRooms.Remove(currentRoom);
+                                        fromRooms.Remove(previousRoom);
+                                        break;
+                                    }
+
+                                    if (attempts == 5)
+                                    {
+                                        currentRoom = loadDeadend(directionTo);
+                                        fromRooms.Remove(previousRoom);
+                                        break;
                                     }
                                 }
+                                */
 
+                                if (toRooms.Count != 0)
+                                {
+                                    while (true)
+                                    {
+
+                                        List<Room> possibleRooms = toRooms;
+
+                                        int index = (int)rand.Next(toRooms.Count);
+                                        Room possibleRoom = possibleRooms[index];
+
+                                        if (possibleRoom != previousRoom)
+                                        {
+                                            currentRoom = possibleRoom;
+                                            toRooms.Remove(currentRoom);
+                                            fromRooms.Remove(previousRoom);
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            possibleRooms.Remove(possibleRoom);
+                                        }
+
+                                        if (possibleRooms.Count == 0)
+                                        {
+                                            currentRoom = loadDeadend(directionTo);
+                                            fromRooms.Remove(previousRoom);
+                                            break;
+                                        }
+                                    }
+
+                                    foreach (WorldObject anotherWorldObject in currentRoom.objects)
+                                    {
+                                        if (anotherWorldObject.type == "Door")
+                                        {
+                                            DoorObject anotherDoor = (DoorObject)anotherWorldObject;
+                                            if (anotherDoor.props["direction"] == directionTo)
+                                            {
+                                                newDoor = anotherDoor;
+                                                player.position = anotherDoor.position;
+                                                doorLinks.Add(previousDoor, newDoor);
+                                                doorLinks.Add(newDoor, previousDoor);
+                                            }
+                                        }
+                                    }
+
+                                }
                             }
+
                         }
                     }
-                    
+
                 }
-
                 currentRoom.addWO(player);
-        
             }
-           
-
             currentRoom.Update(gameTime);
+        }
+
+
+
+
+        public Room loadDeadend(String direction)
+        {
+            Room room = null;
+            if (direction == "left")
+            {
+                room = content.Load<Room>("Levels/L1");
+            }
+            if (direction == "right")
+            {
+                room = content.Load<Room>("Levels/R1");
+            }
+            if (direction == "up")
+            {
+                room = content.Load<Room>("Levels/U1");
+            }
+            if (direction == "down")
+            {
+                room = content.Load<Room>("Levels/D1");
+            }
+
+            room.Init(content);
+
+            return room;
         }
 
         public void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)

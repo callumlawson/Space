@@ -21,6 +21,11 @@ namespace SpaceGame
         Room testRoom;
         Ship currentShip;
 
+        Texture2D deathSplash;
+
+        Boolean paused = false;
+        Boolean defeat = false;
+
         public static WorldObject hacks = null;
 
         public Game1()
@@ -56,19 +61,22 @@ namespace SpaceGame
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             List<Room> rooms = new List<Room>();
-            rooms.Add(Content.Load<Room>("Levels/l1"));
-            rooms.Add(Content.Load<Room>("Levels/doortest2"));
-            rooms.Add(Content.Load<Room>("Levels/doortest3"));
-            rooms.Add(Content.Load<Room>("Levels/doortest4"));
-            rooms.Add(Content.Load<Room>("Levels/doortest5"));
-            rooms.Add(Content.Load<Room>("Levels/doortest6"));
-            rooms.Add(Content.Load<Room>("Levels/doortest7"));
+
+            rooms.Add(Content.Load<Room>("Levels/U1"));
+            rooms.Add(Content.Load<Room>("Levels/LD1"));
+            rooms.Add(Content.Load<Room>("Levels/LU1"));
+            rooms.Add(Content.Load<Room>("Levels/UR1"));
+            rooms.Add(Content.Load<Room>("Levels/RD1"));
+            rooms.Add(Content.Load<Room>("Levels/UR1"));
+            rooms.Add(Content.Load<Room>("Levels/L1"));
+
+            //deathSplash = Content.Load<Texture2D>("deathsplash");
 
             Song track1 = Content.Load<Song>("Sounds/phase1");
             Song track2 = Content.Load<Song>("Sounds/phase2");
             Song track3 = Content.Load<Song>("Sounds/phase3");
 
-            Song[] songs = new Song[]{track1,track2,track3};
+            Song[] songs = new Song[] { track1, track2, track3 };
 
             MediaPlayer.Play(songs[1]);
 
@@ -77,7 +85,7 @@ namespace SpaceGame
             currentShip = new Ship(rooms);
 
             //OLD for debug below
-            
+
             currentShip.Init(Content);
             // TODO: use this.Content to load your game content here
         }
@@ -102,26 +110,45 @@ namespace SpaceGame
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-          currentShip.Update(gameTime);
+            //TODO pause button
 
-            // TODO: Add your update logic here
+            if (!paused)
+            {
+                currentShip.Update(gameTime);
 
-            base.Update(gameTime);
+                // TODO: Add your update logic here
+
+                base.Update(gameTime);
+            }
+
         }
 
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        private int redLevel;
+        /// 
+        private int redLevel = 255;
         private int dir = -1;
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(new Color(105, 105, 105));
+            Color toUse = Color.White;
+
 
             // TODO: Add your drawing code here
-            Color toUse = new Color(255, 255, 255);
-            if (currentShip.alarm)
+            spriteBatch.Begin();
+
+            if (paused)
+            {
+
+            }
+            else if (defeat)
+            {
+
+            }
+            else if (currentShip.alarm)
             {
                 redLevel += dir;
                 if (redLevel == 255)
@@ -134,9 +161,10 @@ namespace SpaceGame
                 }
                 toUse = new Color(255, redLevel, redLevel);
             }
-            spriteBatch.Begin();
-
-            currentShip.Render(spriteBatch, new Vector2(), toUse);
+            else
+            {
+                currentShip.Render(spriteBatch, new Vector2(), toUse);
+            }
 
             spriteBatch.End();
 
