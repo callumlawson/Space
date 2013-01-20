@@ -34,8 +34,13 @@ namespace SpaceGame
             List<RectangleCollider> output = new List<RectangleCollider>();
             int tileMinX = ((int)topLeft.X) / map.tileSize;
             int tileMinY = ((int)topLeft.Y) / map.tileSize;
-            int tileMaxX = (((int)(topLeft.X + dimentions.X)) / map.tileSize)+1;
-            int tileMaxY = (((int)(topLeft.Y + dimentions.Y)) / map.tileSize)+1;
+            int tileMaxX = (((int)(topLeft.X + dimentions.X)) / map.tileSize);
+            int tileMaxY = (((int)(topLeft.Y + dimentions.Y)) / map.tileSize);
+            if (tileMinX < 0) tileMinX = 0;
+            if (tileMinY < 0) tileMinY = 0;
+            if (tileMaxX >= map.width) tileMaxX = map.width - 1;
+            if (tileMaxY >= map.height) tileMaxY = map.height - 1;
+
             for (int i = tileMinX; i <= tileMaxX; i++)
             {
                 for (int j = tileMinY; j <= tileMaxY; j++)

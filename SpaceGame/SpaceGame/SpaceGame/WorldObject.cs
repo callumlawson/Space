@@ -66,10 +66,12 @@ namespace SpaceGame
         }
         public virtual Boolean hits(WorldObject wo)
         {
+            if (collider == null || wo.collider == null) return false;
             return collider.hit(wo.collider, hitPosition, wo.hitPosition);
         }
         public virtual Boolean hits(Map map)
         {
+            if (collider == null) return false;
             return collider.hit(map,hitPosition);
         }
     }
