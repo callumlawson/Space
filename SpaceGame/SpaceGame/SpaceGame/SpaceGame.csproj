@@ -79,6 +79,7 @@
     <Compile Include="Colliders\CircleCollider.cs" />
     <Compile Include="Colliders\Collider.cs" />
     <Compile Include="Colliders\CombiCollider.cs" />
+    <Compile Include="FileNames.cs" />
     <Compile Include="Objects\Ambient.cs" />
     <Compile Include="Objects\DeathZoneObject.cs" />
     <Compile Include="Objects\DoorObject.cs" />

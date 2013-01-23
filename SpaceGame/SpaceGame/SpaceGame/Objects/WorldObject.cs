@@ -96,7 +96,7 @@ namespace SpaceGame
             //Must set/have by this point a: collider, animTexture.
             if (props.ContainsKey("angle"))
             {
-                this.angle = float.Parse(props["angle"]);
+                this.angle = MathHelper.ToDegrees(float.Parse(props["angle"]));
             }
         }
 

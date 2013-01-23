@@ -106,7 +106,7 @@ namespace SpaceGame
 
             this.texture = new AnimatedTexture2D(content.Load<Texture2D>("player"),64,subs);
 
-            this.collider = new CircleCollider(new Vector2(32, 50), 30);
+            this.collider = new CircleCollider(new Vector2(32, 32), 30);
             this.texture.skipC = 10;
             this.texture.setAnim("stationary");
         }

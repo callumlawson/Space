@@ -19,14 +19,13 @@ namespace SpaceGame
         }
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
-            this.angle = 3f ;
             base.Init(content);
             this.collider = new RectangleCollider(new Vector2(13, 13), new Vector2(56, 55));
             List<animationSub> subs = new List<animationSub>();
             subs.Add(new animationSub("charging", 0, 0));
             subs.Add(new animationSub("firing", 1, 4));
             subs.Add(new animationSub("fired", 5, 5));
-            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("laserdish"), 80, subs);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.laserDish), 80, subs);
             this.texture.setAnim("charging");
             this.texture.skipC = 8;
             if (props.ContainsKey("chargeTime"))

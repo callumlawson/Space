@@ -19,7 +19,7 @@ namespace SpaceGame
             List<animationSub> subs = new List<animationSub>();
             subs.Add(new animationSub("idle", 0, 0));
             subs.Add(new animationSub("triggered", 1, 4));
-            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("proximitymine"), 128, subs);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.proximityMine), 128, subs);
             this.texture.setAnim("idle");
             this.texture.skipC = 5;
         }
@@ -46,7 +46,7 @@ namespace SpaceGame
                     shrap.addFriend(s);
                 }
                 toFriend.Add(shrap);
-                shrap.position = this.position;
+                shrap.position = this.position + new Vector2(64,64);
                 this.onAddThis(shrap);
             }
             this.onDestroyMe();

@@ -15,7 +15,7 @@ namespace SpaceGame
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
             base.Init(content);
-            Texture2D getTex = content.Load<Texture2D>(props["imageName"]);
+            Texture2D getTex = content.Load<Texture2D>(FileNames.AmbientFolder + props["imageName"]);
             int witdth = getTex.Width;
 
             if(props.ContainsKey("width"))

@@ -86,12 +86,12 @@ namespace SpaceGame
             rooms.Add(Content.Load<Room>("Levels/U1"));
              * */
 
-            deathSplash = Content.Load<Texture2D>("deathsplash");
-            pauseSplash = Content.Load<Texture2D>("pausesplash");
+            deathSplash = Content.Load<Texture2D>(FileNames.deathSplash);
+            pauseSplash = Content.Load<Texture2D>(FileNames.pauseSplash);
 
-            Song track1 = Content.Load<Song>("Sounds/phase1");
-            Song track2 = Content.Load<Song>("Sounds/phase2");
-            Song track3 = Content.Load<Song>("Sounds/phase3");
+            Song track1 = Content.Load<Song>(FileNames.phase1);
+            Song track2 = Content.Load<Song>(FileNames.phase2);
+            Song track3 = Content.Load<Song>(FileNames.phase3);
 
             //death = Content.Load<SoundEffect>("Sounds/death");
 

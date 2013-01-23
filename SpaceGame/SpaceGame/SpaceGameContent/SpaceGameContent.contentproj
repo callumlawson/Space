@@ -68,14 +68,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="laserdish.png">
+    <Compile Include="Traps\laserdish.png">
       <Name>laserdish</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="lasersection.png">
+    <Compile Include="TrapSpawns\lasersection.png">
       <Name>lasersection</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -99,51 +99,51 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="laserbeam.png">
+    <Compile Include="TrapSpawns\laserbeam.png">
       <Name>laserbeam</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="projectile1.png">
+    <Compile Include="TrapSpawns\projectile1.png">
       <Name>projectile1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="turret1.png">
+    <Compile Include="Traps\turret1.png">
       <Name>turret1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Turret2.png">
+    <Compile Include="Traps\Turret2.png">
       <Name>Turret2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExplosionParticle1.png">
+    <Compile Include="TrapSpawns\ExplosionParticles\ExplosionParticle1.png">
       <Name>ExplosionParticle1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="ExplosionParticle2.png">
+    <Compile Include="TrapSpawns\ExplosionParticles\ExplosionParticle2.png">
       <Name>ExplosionParticle2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="ExplosionParticle3.png">
+    <Compile Include="TrapSpawns\ExplosionParticles\ExplosionParticle3.png">
       <Name>ExplosionParticle3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="proximitymine.png">
+    <Compile Include="Traps\proximitymine.png">
       <Name>proximitymine</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="puddle.png">
+    <Compile Include="Ambient\puddle.png">
       <Name>puddle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -157,52 +157,52 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="deathsplash.png">
+    <Compile Include="UI\deathsplash.png">
       <Name>deathsplash</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pausesplash.png">
+    <Compile Include="UI\pausesplash.png">
       <Name>pausesplash</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bluejewel.png">
+    <Compile Include="Pickups\bluejewel.png">
       <Name>bluejewel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="greenjewel.png">
+    <Compile Include="Pickups\greenjewel.png">
       <Name>greenjewel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="orangejewel.png">
+    <Compile Include="Pickups\orangejewel.png">
       <Name>orangejewel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="purplejewel.png">
+    <Compile Include="Pickups\purplejewel.png">
       <Name>purplejewel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="redjewel.png">
+    <Compile Include="Pickups\redjewel.png">
       <Name>redjewel</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controls.png">
+    <Compile Include="Traps\controls.png">
       <Name>controls</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
@@ -291,24 +291,24 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pirateFlag.png">
+    <Compile Include="Ambient\pirateFlag.png">
       <Name>pirateFlag</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gas1.png">
+    <Compile Include="TrapSpawns\Gases\Gas1.png">
       <Name>Gas1</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Gas2.png">
+    <Compile Include="TrapSpawns\Gases\Gas2.png">
       <Name>Gas2</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="Gas3.png">
+    <Compile Include="TrapSpawns\Gases\Gas3.png">
       <Name>Gas3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>

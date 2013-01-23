@@ -23,11 +23,11 @@ namespace SpaceGame
             {
                 this.velocity /= 8f;
                 this.collider = new CircleCollider(new Vector2(7.5f, 7.5f), 7.5f);
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("projectile1"), 15, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.projectile1), 15, animationSub.def);
             }
             else if (parentType == "TurretTrack")
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("laserbeam"), 4, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.laserBeam), 4, animationSub.def);
                 this.collider = new LineCollider(new Vector2(0, 0), velocity);
                 this.velocity /= 4f;
             }
@@ -45,7 +45,7 @@ namespace SpaceGame
         }
         public override void Render(SpriteBatch spriteBatch, Vector2 offset, Color tint)
         {
-            base.Render(spriteBatch, offset, tint,new Vector2(2,20));
+            base.Render(spriteBatch, offset, tint);
         }
     }
 }

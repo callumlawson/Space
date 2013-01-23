@@ -19,7 +19,7 @@ namespace SpaceGame
             List<animationSub> subs = new List<animationSub>();
             subs.Add(new animationSub("depressed", 0, 1));
             subs.Add(new animationSub("pressed", 2, 3));
-            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("controls"), 256, subs);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.controls), 256, subs);
             this.texture.skipC = 5;
             this.texture.setAnim("depressed");
             this.collider = new RectangleCollider(new Vector2(38, 102), new Vector2(52, 52));

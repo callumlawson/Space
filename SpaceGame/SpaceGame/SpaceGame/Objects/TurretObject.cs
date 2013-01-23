@@ -31,7 +31,7 @@ namespace SpaceGame
         public override void  Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
  	        base.Init(content);
-            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("turret1"), 80, animationSub.def);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.turret1), 80, animationSub.def);
             this.blocks = true;
             this.collider = new CircleCollider(new Vector2(40, 40), 38);
             if(this.type == "TurretTrack")
@@ -114,7 +114,7 @@ namespace SpaceGame
         {
             Projectile pj = new Projectile(this.type);
             pj.angle = this.angle;
-            pj.position = this.position + new Vector2(33,33);
+            pj.position = this.position + new Vector2(40,40);
             pj.addFriend(this);
             this.onAddThis(pj);
         }

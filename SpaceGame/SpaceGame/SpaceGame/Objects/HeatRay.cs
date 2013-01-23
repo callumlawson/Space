@@ -23,7 +23,7 @@ namespace SpaceGame
             float sa = (float)Math.Sin(this.angle);
             float ca = (float)Math.Cos(this.angle);
             d = new Vector2(-sa * 44.5f, ca * 44.5f);
-            this.texture = new AnimatedTexture2D(content.Load<Texture2D>("lasersection"), 80, animationSub.def);
+            this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.laserSection), 80, animationSub.def);
             this.destroys = true;
             List<Collider> ls = new List<Collider>();
             

@@ -22,19 +22,19 @@ namespace SpaceGame
             if(st == 0)
             {
                 this.collider = new CircleCollider(new Vector2(15f,15f),15f);
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("Gas1"),15,animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.gas1),15,animationSub.def);
 
             }
             else if(st == 1)
             {
                 this.collider = new CircleCollider(new Vector2(15f,15f),15f);
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("Gas2"),15,animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.gas2),15,animationSub.def);
                 
             }
             else if (st == 2)
             {
                 this.collider = new CircleCollider(new Vector2(15f, 15f), 15f);
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("Gas3"), 15, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.gas3), 15, animationSub.def);
             }
             this.destroys = true;
         }

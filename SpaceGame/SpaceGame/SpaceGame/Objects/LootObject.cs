@@ -22,27 +22,27 @@ namespace SpaceGame
             int choo = r.Next(0,100);
             if(choo < 3)
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("purplejewel"), 64, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.jewelPurple), 64, animationSub.def);
                 this.loot = 2500;
             }
             else if (choo < 10)
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("bluejewel"), 64, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.jewelBlue), 64, animationSub.def);
                 this.loot = 2000;
             }
             else if (choo <  20)
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("orangejewel"), 64, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.jewelOrange), 64, animationSub.def);
                 this.loot = 1500;
             }
             else if (choo < 50)
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("greenjewel"), 64, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.jewelGreen), 64, animationSub.def);
                 this.loot = 1000;
             }
             else
             {
-                this.texture = new AnimatedTexture2D(content.Load<Texture2D>("redjewel"), 64, animationSub.def);
+                this.texture = new AnimatedTexture2D(content.Load<Texture2D>(FileNames.jewelRed), 64, animationSub.def);
                 this.loot = 500;
             }
 
