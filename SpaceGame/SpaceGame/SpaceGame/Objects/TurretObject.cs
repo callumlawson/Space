@@ -114,7 +114,14 @@ namespace SpaceGame
         {
             Projectile pj = new Projectile(this.type);
             pj.angle = this.angle;
-            pj.position = this.position + new Vector2(40,40);
+            if(this.type == "TurretTrack")
+            {
+                pj.position = this.position + new Vector2(38f, 20f);
+            }
+            else
+            {
+                pj.position = this.position + new Vector2(32.5f,32.5f);
+            }
             pj.addFriend(this);
             this.onAddThis(pj);
         }
