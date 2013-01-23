@@ -221,5 +221,8 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
+  <object name="Loot" type="Loot" x="432" y="292" width="96" height="99"/>
+  <object name="Loot" type="Loot" x="584" y="392" width="96" height="99"/>
+  <object name="Loot" type="Loot" x="317" y="422" width="96" height="99"/>
  </objectgroup>
 </map>

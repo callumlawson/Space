@@ -82,6 +82,8 @@
     <Compile Include="Objects\Ambient.cs" />
     <Compile Include="Objects\DeathZoneObject.cs" />
     <Compile Include="Objects\DoorObject.cs" />
+    <Compile Include="Objects\Gas.cs" />
+    <Compile Include="Objects\GasVentObject.cs" />
     <Compile Include="Objects\HeatRay.cs" />
     <Compile Include="Objects\HeatRayObject.cs" />
     <Compile Include="Interfaces\IInitable.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Interfaces\IUpdates.cs" />
     <Compile Include="Colliders\LineCollider.cs" />
     <Compile Include="LevelData\Map.cs" />
+    <Compile Include="Objects\LootObject.cs" />
     <Compile Include="Objects\MovingWorldObject.cs" />
     <Compile Include="Objects\PlayerObject.cs" />
     <Compile Include="Objects\Projectile.cs" />

@@ -13,6 +13,7 @@ namespace SpaceGame
         {
 
         }
+
         public override void Init(Microsoft.Xna.Framework.Content.ContentManager content)
         {
             base.Init(content);
@@ -27,23 +28,25 @@ namespace SpaceGame
             else if (choo < 10)
             {
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("bluejewel"), 64, animationSub.def);
-                this.loot = 200;
+                this.loot = 2000;
             }
             else if (choo <  20)
             {
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("orangejewel"), 64, animationSub.def);
-                this.loot = 500;
+                this.loot = 1500;
             }
             else if (choo < 50)
             {
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("greenjewel"), 64, animationSub.def);
                 this.loot = 1000;
             }
-            else if (choo < 80)
+            else
             {
                 this.texture = new AnimatedTexture2D(content.Load<Texture2D>("redjewel"), 64, animationSub.def);
-                this.loot = 2500;
+                this.loot = 500;
             }
+
+            this.texture.skipC = 4;
         }
         public override void trigger()
         {

@@ -30,6 +30,7 @@ namespace SpaceGame
 
         Boolean paused = false;
         Boolean defeat = false;
+        Boolean win = false;
 
         public static WorldObject hacks = null;
 
@@ -69,13 +70,21 @@ namespace SpaceGame
 
             List<Room> rooms = new List<Room>();
 
-            rooms.Add(Content.Load<Room>("Levels/U1"));
+            rooms.Add(Content.Load<Room>("Levels/Start"));  
             rooms.Add(Content.Load<Room>("Levels/LD1"));
+            rooms.Add(Content.Load<Room>("Levels/LR1"));
             rooms.Add(Content.Load<Room>("Levels/LU1"));
-           // rooms.Add(Content.Load<Room>("Levels/UR1"));
-           // rooms.Add(Content.Load<Room>("Levels/RD1"));
-           // rooms.Add(Content.Load<Room>("Levels/UR1"));
-           // rooms.Add(Content.Load<Room>("Levels/L1"));
+            rooms.Add(Content.Load<Room>("Levels/LUR1")); 
+            rooms.Add(Content.Load<Room>("Levels/RD1"));   
+            rooms.Add(Content.Load<Room>("Levels/UR1"));
+            rooms.Add(Content.Load<Room>("Levels/UD1"));
+
+            /* Added by ship gen
+            rooms.Add(Content.Load<Room>("Levels/R1"));
+            rooms.Add(Content.Load<Room>("Levels/L1"));
+            rooms.Add(Content.Load<Room>("Levels/D1"));
+            rooms.Add(Content.Load<Room>("Levels/U1"));
+             * */
 
             deathSplash = Content.Load<Texture2D>("deathsplash");
             pauseSplash = Content.Load<Texture2D>("pausesplash");
@@ -196,20 +205,22 @@ namespace SpaceGame
             }
             else if (currentShip.alarm)
             {
+                
                 redLevel += dir;
-                if (redLevel == 255)
+                if (redLevel >= 254)
                 {
-                    dir = -1;
+                    dir = -2;
                 }
-                if (redLevel == 100)
+                if (redLevel <= 100)
                 {
-                    dir = 1;
+                    dir = 2;
                 }
                 toUse = new Color(255, redLevel, redLevel);
+                currentShip.Render(spriteBatch, new Vector2(), toUse);
             }
             else
             {
-                currentShip.Render(spriteBatch, new Vector2(), toUse);
+                currentShip.Render(spriteBatch, new Vector2(), Color.White);
             }
 
             spriteBatch.End();

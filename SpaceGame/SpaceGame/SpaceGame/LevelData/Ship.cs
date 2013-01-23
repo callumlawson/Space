@@ -36,6 +36,8 @@ namespace SpaceGame
 
         public Boolean alarm;
 
+        public Boolean win;
+
         public Random rand;
         //protected Door mainEntry;
 
@@ -121,7 +123,6 @@ namespace SpaceGame
 
             Room previousRoom = currentRoom;
 
-
             String directionFrom = player.transition;
             String directionTo = "";
 
@@ -175,17 +176,14 @@ namespace SpaceGame
                                 currentRoom = newDoor.room;
                                 player.position = newDoor.position;
                             }
-                            else
+                            else //We need to select a new room as the door is not linked
                             {
-
-                                if (toRooms.Count != 0)
+                                while (true)
                                 {
-                                    while (true)
+                                    if (toRooms.Count > 0)
                                     {
-
-                                        List<Room> possibleRooms = toRooms;
-
                                         int index = (int)rand.Next(toRooms.Count);
+                                        List<Room> possibleRooms = toRooms;
                                         Room possibleRoom = possibleRooms[index];
 
                                         if (possibleRoom != previousRoom)
@@ -199,41 +197,45 @@ namespace SpaceGame
                                         {
                                             possibleRooms.Remove(possibleRoom);
                                         }
-
-                                        if (possibleRooms.Count == 0)
-                                        {
-                                            if (toRooms.Count + fromRooms.Count >= 4)
-                                            {
-                                                currentRoom = createRoom(loadDeadend(directionTo));
-                                                fromRooms.Remove(previousRoom);
-                                                break;
-                                            }
-                                            else if (!foundBridge)
-                                            {
-                                                currentRoom = createRoom(loadBridge(directionTo));
-                                                currentRoom.redButtonEvent += new RedButtonEventDelegate(currentRoom_redButtonEvent);
-                                                fromRooms.Remove(previousRoom);
-                                                foundBridge = true;
-                                                break;
-                                            }
-                                        }
                                     }
-
-                                    foreach (WorldObject anotherWorldObject in currentRoom.objects)
+                                    else //Need to fix possible fail on way back - THIS CODE IS NOT DONE FORGIVE THE UGLY
                                     {
-                                        if (anotherWorldObject.type == "Door")
+                                        if (toRooms.Count + fromRooms.Count >= 4)
                                         {
-                                            DoorObject anotherDoor = (DoorObject)anotherWorldObject;
-                                            if (anotherDoor.props["direction"] == directionTo)
-                                            {
-                                                newDoor = anotherDoor;
-                                                player.position = anotherDoor.position;
-                                                doorLinks.Add(previousDoor, newDoor);
-                                                doorLinks.Add(newDoor, previousDoor);
-                                            }
+                                            currentRoom = createRoom(loadDeadend(directionTo));
+                                            fromRooms.Remove(previousRoom);
+                                            break;
+                                        }
+                                        else if (!foundBridge)
+                                        {
+                                            currentRoom = createRoom(loadBridge(directionTo));
+                                            currentRoom.redButtonEvent += new RedButtonEventDelegate(currentRoom_redButtonEvent);
+                                            fromRooms.Remove(previousRoom);
+                                            foundBridge = true;
+                                            break;
+                                        }
+                                        else
+                                        {
+                                            currentRoom = createRoom(loadDeadend(directionTo));
+                                            fromRooms.Remove(previousRoom);
+                                            break;
                                         }
                                     }
+                                }
 
+                                foreach (WorldObject anotherWorldObject in currentRoom.objects) //Conntect to the correct door in the new room and add the links to the dictionary
+                                {
+                                    if (anotherWorldObject.type == "Door")
+                                    {
+                                        DoorObject anotherDoor = (DoorObject)anotherWorldObject;
+                                        if (anotherDoor.props["direction"] == directionTo)
+                                        {
+                                            newDoor = anotherDoor;
+                                            player.position = anotherDoor.position;
+                                            doorLinks.Add(previousDoor, newDoor);
+                                            doorLinks.Add(newDoor, previousDoor);
+                                        }
+                                    }
                                 }
                             }
 
@@ -254,7 +256,7 @@ namespace SpaceGame
 
         void room_lootEvent(int amount)
         {
-               throw new NotImplementedException();
+            //  throw new NotImplementedException();
         }
 
         void currentRoom_redButtonEvent()

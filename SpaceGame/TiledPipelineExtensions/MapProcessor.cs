@@ -110,7 +110,7 @@ namespace SpaceGameContentPipeline
     {
 
     }
-    [ContentSerializerRuntimeType("SpaceGame.GassVentObject, SpaceGame")]
+    [ContentSerializerRuntimeType("SpaceGame.GasVentObject, SpaceGame")]
     public class GasVentObject : TriggerObject
     {
 

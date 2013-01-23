@@ -223,7 +223,7 @@
   </object>
   <object name="HeatRay1" type="HeatRay" x="727" y="95" width="84" height="79">
    <properties>
-    <property name="angle" value="-110"/>
+    <property name="angle" value="30"/>
     <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
@@ -235,30 +235,10 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
-  <object name="GasVent" type="DeathZone" x="323" y="65" width="64" height="64">
-   <properties>
-    <property name="shape" value="0"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
-  <object name="GasVent" type="DeathZone" x="65" y="637" width="64" height="64">
-   <properties>
-    <property name="shape" value="0"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
-  <object name="GasVent" type="DeathZone" x="579" y="637" width="64" height="64">
-   <properties>
-    <property name="shape" value="0"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
+
   <object name="HeatRay1" type="HeatRay" x="727" y="267" width="84" height="79">
    <properties>
-    <property name="angle" value="-110"/>
+    <property name="angle" value="30"/>
     <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
@@ -266,10 +246,17 @@
   </object>
   <object name="HeatRay1" type="HeatRay" x="726" y="423" width="84" height="79">
    <properties>
-    <property name="angle" value="-110"/>
+    <property name="angle" value="30"/>
     <property name="chargeTime" value="72"/>
     <property name="fireTime" value="36"/>
     <property name="triggered" value="1"/>
+   </properties>
+  </object>
+  <object name="GasVent" type="GasVent" x="65" y="637" width="64" height="64">
+   <properties>
+    <property name="shape" value="0"/>
+    <property name="timeOff" value="0"/>
+    <property name="timeOn" value="0"/>
    </properties>
   </object>
  </objectgroup>

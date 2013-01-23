@@ -23,6 +23,7 @@ namespace SpaceGame
                 witdth = int.Parse(props["width"]);
             }
             this.texture = new AnimatedTexture2D(getTex, witdth, animationSub.def);
+            this.texture.skipC = 5;
         }
     }
 }

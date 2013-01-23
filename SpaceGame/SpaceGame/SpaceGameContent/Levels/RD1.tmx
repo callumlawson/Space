@@ -215,7 +215,7 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="GasVent" type="DeathZone" x="791" y="169" width="64" height="64">
+  <object name="GasVent" type="GasVent" x="791" y="169" width="64" height="64">
    <properties>
     <property name="shape" value="0"/>
     <property name="timeOff" value="0"/>

@@ -215,13 +215,7 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="GasVent" type="DeathZone" x="128" y="383" width="64" height="64">
-   <properties>
-    <property name="shape" value="0"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
+  
   <object name="ProximityMine" type="ProximityMine" x="289" y="237" width="128" height="128">
    <properties>
     <property name="shape" value="1"/>
@@ -260,5 +254,7 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
+  <object x="575" y="583" width="78" height="72"/>
+  <object name="Loot" type="Loot" x="575" y="583" width="78" height="72"/>
  </objectgroup>
 </map>

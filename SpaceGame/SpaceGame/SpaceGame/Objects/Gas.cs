@@ -5,12 +5,12 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace SpaceGame.Objects
+namespace SpaceGame
 {
-    public class Gass:MovingWorldObject
+    public class Gas:MovingWorldObject
     {
         protected int st;
-        public Gass(Vector2 velocity, int st)
+        public Gas(Vector2 velocity, int st)
         {
             this.st = st;
             this.friction = 0.99f;

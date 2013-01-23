@@ -232,7 +232,7 @@
    <properties>
     <property name="projectileType" value="3"/>
     <property name="rateOfFire" value="3"/>
-    <property name="rateOfRotation" value="1"/>
+    <property name="rateOfRotation" value="0.5"/>
     <property name="timeFiring" value="0"/>
     <property name="timeIdle" value="0"/>
    </properties>
@@ -271,5 +271,7 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
+  <object name="Loot" type="Loot" x="341" y="342" width="73" height="63"/>
+  <object name="Loot" type="Loot" x="598" y="341" width="73" height="63"/>
  </objectgroup>
 </map>

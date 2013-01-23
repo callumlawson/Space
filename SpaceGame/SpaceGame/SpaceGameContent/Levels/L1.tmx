@@ -263,5 +263,6 @@
     <property name="timeOn" value="0"/>
    </properties>
   </object>
+  <object name="Loot" type="Loot" x="744" y="492" width="25" height="29"/>
  </objectgroup>
 </map>

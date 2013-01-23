@@ -36,7 +36,7 @@ namespace SpaceGame
         {
             if (this.hitdestroys)
             {
-               // this.onDestroyMe(true);
+               //this.onDestroyMe(true);
             }
             base.Update(gameTime);
             float speedMulti = 0.8f;

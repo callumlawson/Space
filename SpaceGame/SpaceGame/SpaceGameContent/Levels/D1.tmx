@@ -287,5 +287,6 @@
     <property name="startAngle" value="0"/>
    </properties>
   </object>
+  <object name="Loot" type="Loot" x="475" y="81" width="52" height="64"/>
  </objectgroup>
 </map>

@@ -215,13 +215,7 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="16" height="12">
-  <object name="GasVent" type="DeathZone" x="261" y="576" width="64" height="64">
-   <properties>
-    <property name="shape" value="0"/>
-    <property name="timeOff" value="0"/>
-    <property name="timeOn" value="0"/>
-   </properties>
-  </object>
+
   <object name="DoorYellow" type="Door" x="5" y="356" width="64" height="64">
    <properties>
     <property name="direction" value="left"/>
@@ -232,7 +226,7 @@
    <properties>
     <property name="projectileType" value="3"/>
     <property name="rateOfFire" value="5"/>
-    <property name="rateOfRotation" value="1"/>
+    <property name="rateOfRotation" value="0.5"/>
     <property name="timeFiring" value="0"/>
     <property name="timeIdle" value="0"/>
    </properties>
@@ -249,5 +243,6 @@
     <property name="locked" value="0"/>
    </properties>
   </object>
+  <object name="Loot" type="Loot" x="799" y="617" width="83" height="78"/>
  </objectgroup>
 </map>
